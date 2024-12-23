@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+      
+    </main>
+    <form action="#" method="POST">
+      <div>
+          <label for="systemPrompt">System Prompt:</label>
+          <input type="text" id="systemPrompt" name="systemPrompt" maxlength="200" placeholder="Enter system prompt" required>
+      </div>
+
+      <div>
+          <label for="temperature">Temperature (0-1):</label>
+          <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.5" required>
+          <span id="temperatureValue">0.5</span>
+      </div>
+
+      <div>
+          <label for="prompt">Text to continue:</label>
+          <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Enter text to continue" required>
+      </div>
+      <div>
+        <label for="maxTokens">Max tokens (1-20):</label>
+        <input type="range" id="maxTokens" name="maxTokens" min="1" max="20" value="20" required>
+        <span id="maxTokensValue">20</span>
+    </div>
+      <div>
+          <label for="numOptions"># of options (1-5):</label>
+          <input type="range" id="numOptions" name="numOptions" min="1" max="5" value="5" required>
+          <span id="numOptionsValue">5</span>
+      </div>
+    </form>
+    <script src="sketch.js"></script>
+    
+
+
+  <script>
+      // Update temperature value display
+      document.getElementById('temperature').addEventListener('input', function () {
+          document.getElementById('temperatureValue').textContent = this.value;
+      });
+
+      // Update number of options value display
+      document.getElementById('numOptions').addEventListener('input', function () {
+          document.getElementById('numOptionsValue').textContent = this.value;
+      });
+
+      document.getElementById('maxTokens').addEventListener('input', function () {
+          document.getElementById('maxTokensValue').textContent = this.value;
+      });
+  </script>
+  </body>
+</html>
