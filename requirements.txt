@@ -1,0 +1,24 @@
+annotated-types @ file:///croot/annotated-types_1709542908624/work
+anyio @ file:///croot/anyio_1729121277521/work
+blinker @ file:///work/perseverance-python-buildout/croot/blinker_1698846408677/work
+certifi @ file:///croot/certifi_1725551672989/work/certifi
+click @ file:///work/perseverance-python-buildout/croot/click_1698845879718/work
+distro @ file:///croot/distro_1714488253808/work
+Flask @ file:///croot/flask_1716545870149/work
+h11 @ file:///croot/h11_1706652277403/work
+httpcore @ file:///croot/httpcore_1706728464539/work
+httpx @ file:///croot/httpx_1723474802858/work
+idna @ file:///croot/idna_1714398848350/work
+itsdangerous @ file:///croot/itsdangerous_1716533337253/work
+Jinja2 @ file:///croot/jinja2_1730902924303/work
+jiter @ file:///croot/jiter_1729808929109/work
+MarkupSafe @ file:///work/perseverance-python-buildout/croot/markupsafe_1707342994941/work
+openai @ file:///croot/openai_1730224423472/work
+pydantic @ file:///croot/pydantic_1725040526370/work
+pydantic_core @ file:///croot/pydantic-core_1724790363792/work
+setuptools==75.1.0
+sniffio @ file:///croot/sniffio_1705431295498/work
+tqdm @ file:///croot/tqdm_1724853939799/work
+typing_extensions @ file:///croot/typing_extensions_1715268824938/work
+Werkzeug @ file:///croot/werkzeug_1731005776056/work
+wheel==0.44.0
