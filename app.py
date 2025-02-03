@@ -14,13 +14,18 @@ def index():
 @app.route('/api/query')
 def get_completions():
 	prompt = request.args.get('msg')
+	maxTokens = int(request.args.get('numTokens'))
+	options = int(request.args.get('numOptions'))
+	temp = float(request.args.get('temp'))
+	sysPrompt = request.args.get('sysPrompt')
 	reply = []
 	completion = client.chat.completions.create(
 		model="gpt-4o-mini",
-		n=5,
-		max_completion_tokens=20,
+		n=options,
+		temperature=temp,
+		max_completion_tokens=maxTokens,
 		messages=[
-			{"role": "system", "content": "You are a storyteller who continues the lines and stories told to you. Your addition should be less than a sentence."},
+			{"role": "system", "content": sysPrompt},
 			{"role": "user", "content": prompt}
 		]
 	)

@@ -1,150 +1,185 @@
-function preload() {
-
+var innerW, canvasH, c, tBase, tCar, tTop;
+var pageW, pageH, pageOffset, pageX, pageY, imgX, imgY, imgW, imgH;
+var pageBuffer, eraser, promptField, sysPromptField;
+function preload(){
+  tBase = loadImage("img/Typewriter-base.png");
+  tCar = loadImage("img/Typewriter-carriage.png");
+  tTop = loadImage("img/Typewriter-top.png");
+  logo = loadImage("img/logo.png");
+//  bkgd = loadImage("background.jpg");
 }
-
 function setup() {
-  canvasH = 1000;
-  canvasW = 1000;
-  createCanvas(canvasW, canvasH);
-  lineH = 20;
-  textSize(12);
-  textFont('Courier New');
-  cursorUnit = textWidth('i') + 2;
+  canvasH=window.innerHeight;
+  canvasW=window.innerWidth;
+  innerW=min(canvasW, 1.5*canvasH);
+  marginL=0.5*(canvasW - innerW);
+  c=createCanvas(canvasW, canvasH);
+  
+  imgX = (-.2 * innerW) + marginL;
+  imgY = canvasH - innerW * .6;
+  imgW = 1.5 * innerW;
+  imgH = innerW;
+  
+  pageW = 0.42 * innerW;
+  pageH = 0.15 * innerW;
+  pageOffset = -.48 * pageW;
+  pageX = (0.285 * innerW) + marginL;
+  pageY = canvasH - 0.37 * innerW;
+  
+  pageBuffer=createGraphics(pageW, canvasH, P2D);
+  pageBuffer.rect(0, 0,pageW, canvasH);
+  
+  lineH = 15;
+  pageBuffer.textSize(11);
+  pageBuffer.textFont('Courier');
+  cursorUnit = textWidth('a');
   eraser=color(245);
-  eraser.setAlpha(190);
+  eraser.setAlpha(150);
   strokeWeight(0);
-  cursorx = 2*cursorUnit;
-  cursory = 60;
-  background(256);
-  userText="";
-  form1 = document.getElementById("systemPrompt");
-  form2 = document.getElementById("prompt");
+
+  sysPromptField = document.getElementById('systemPrompt');
+  promptField = document.getElementById('prompt');
 }
 
 function draw() {
-
+  noStroke();
+  background('AntiqueWhite');
+ // image(bkgd, -0.1 * imgW, -0.2 * imgH, imgW, imgH);
+  blendMode(MULTIPLY);
+  image(logo, 0, 15, 180, 100);
+  blendMode(BLEND);
+  image(tBase, imgX, imgY, imgW, imgH);
+  copy(pageBuffer, 0, 0, int(pageW), int(pageH), int(pageX - pageOffset), int(pageY), int(pageW), int(pageH));
+  image(tCar,  imgX-pageOffset - 0.008 * innerW, imgY, imgW, imgH);
+  image(tTop,  imgX, imgY, imgW, imgH);
 }
 
 function keyTyped(){
-  if(document.activeElement === form1 || document.activeElement === form2 ){
+  if(document.activeElement === promptField || document.activeElement === sysPromptField){
     return;
   }
   if( key==="Enter"){
-    eraseCursor();
-    cursorx = 2*cursorUnit
-    cursory +=3 *lineH;
-    showCursor();
-    userText+=" "
+   pageOffset = -.48 * pageW;
   }
   else{
-    eraseCursor();
-    fill(0);
+    pageBuffer.fill(0);
     newchar=key;
-    if((textWidth(newchar+cursorx))>(canvasW-(2*cursorUnit))){
-      cursorx = 2*cursorUnit;
-      cursory += 60;
+    if(pageOffset < pageW * 0.48){
+      pageBuffer.text(newchar,(0.5*pageW) + pageOffset, pageH - 15);
+      pageOffset += cursorUnit;
     }
-    text(newchar,cursorx,cursory);
-    cursorx += cursorUnit;
-    showCursor();
-    userText += key;
+    if(document.getElementById('autofill').checked){
+      promptField.value+=newchar;
+    }
   }
 }
 
 function keyPressed(){
-  if(document.activeElement === form1 || document.activeElement === form2 ){
+  if(document.activeElement === sysPromptField || document.activeElement === promptField ){
     return;
   }
   if(key=== 'Tab'){
-    printCompletions(cursorx,cursory);
+    printCompletions((0.5*pageW) + pageOffset, pageH-15);
     return false;
   }
-  else if (key ==='Backspace'){
-    eraseCursor();
-    fill(eraser);
-    blendMode(LIGHTEST);
-    delW = cursorUnit
-    if(cursorx > delW){
-      rect(cursorx - delW,cursory - 16, delW, 20);
-      cursorx -= delW;
-    }else{
-      rect(0, cursory - 16,cursorx,20);
-      rect(canvasW - (delW - cursorx), cursory-56,(delW- cursorx), 20);
-      cursory -=60;
-      cursorx = canvasW - (delW - cursorx);
+  if (key ==='Backspace'){
+    pageBuffer.fill(eraser);
+    pageBuffer.noStroke();
+    pageBuffer.blendMode(LIGHTEST);
+    if(pageOffset > -0.48 * pageW){
+      pageBuffer.rect((0.5*pageW) + pageOffset - cursorUnit, pageH - 30, cursorUnit, 20); 
+      pageOffset -= cursorUnit;
     }
-    cursorx=max(cursorx, 2*cursorUnit);
-    blendMode(BLEND);
-    showCursor();
+    pageBuffer.blendMode(BLEND);
   }
   else if(key==='ArrowLeft'){
-    eraseCursor();
-    cursorx = max(2*cursorUnit, cursorx-cursorUnit);
-    showCursor();
+      move(37, 500);
   }
   else if(key==='ArrowRight'){
-    eraseCursor();
-    cursorx = min(canvasW, cursorx+cursorUnit);
-    showCursor();
+    move(39, 500);
   }
   else if(key==='ArrowUp'){
-    eraseCursor();
-    cursory= max(20,cursory-20);
-    showCursor();
+    move(38, 500);
   }
   else if(key==='ArrowDown'){
-    eraseCursor();
-    cursory= min(canvasH, cursory+20);
-    showCursor();
+    move(40, 500);
   }
 }
 
-function eraseCursor(){
-  fill(256);
-  rect(cursorx - 2,cursory-16,3,20);
+function move(keycode, wait){
+  if(keyIsDown(keycode)){
+    if(keycode==37){ //Left
+      if(pageOffset > pageW * -0.48){
+        pageOffset -= cursorUnit;
+      }
+    }else if (keycode==39){ //Right
+      if(pageOffset < pageW * 0.48){
+        pageOffset += cursorUnit;
+      }
+    }else if (keycode==38){ //Up
+      if(pageY < canvasH - 0.27 * innerW){
+        pageY += 0.5 * lineH;
+        pageH -= 0.5 * lineH;
+      }
+    }else if (keycode==40){ //Down
+      if(pageY > 20){
+        pageY -= 0.5 * lineH;
+        pageH += 0.5 * lineH;
+      }
+    }
+    setTimeout(function(){move(keycode, max(50,.7 *wait));}, wait);
+  }
+  return;
 }
 
-function showCursor(){
-  fill(0);
-  rect(cursorx-1,cursory-16,1,20);
-}
-
-async function printCompletions(x,y){
-  eraseCursor();
-  stroke(0);
-  strokeWeight(1);  
-  bezier(x,y-5,x+2*cursorUnit,y-5,x,y-45,x +2*cursorUnit ,y-45);
-  bezier(x,y-5,x+2*cursorUnit,y-5,x,y-25,x +2*cursorUnit ,y-25);
-  bezier(x,y-5,x+2*cursorUnit,y-5,x,y-5,x +2*cursorUnit ,y-5);
-  bezier(x,y-5,x+2*cursorUnit,y-5,x,y+15,x +2*cursorUnit ,y+15);
-  bezier(x,y-5,x+2*cursorUnit,y-5,x,y+35,x +2*cursorUnit ,y+35);
-  x +=2*cursorUnit;
-  fill(0,200,0);
-  strokeWeight(0);
+async function printCompletions(x,y,num){
   choices = await getCompletions();
-  y -= 40;
+  y2 = y + lineH * 0.5 * (1 - choices.length);
+  x2 = x + 2 * cursorUnit;
   for(var choice of choices){
-    linex=x;
-    for(var cha of choice){
-      text(cha,linex,y);
+    pageBuffer.stroke(0);
+    pageBuffer.strokeWeight(1);
+    pageBuffer.noFill();
+    pageBuffer.bezier(x,y - 0.2*lineH,x2,y - 0.2*lineH,x,y2 - 0.2*lineH,x2,y2 - 0.2*lineH);
+    pageBuffer.fill(0,200,0);
+    pageBuffer.strokeWeight(0);
+    let linex = x2;
+    for(var cha of choice){ 
+      pageBuffer.text(cha,linex,y2);
       linex += cursorUnit;
     }
-    y+=20;
+    y2 += lineH;
   }
-  cursorx += cursorUnit * choices[2].length;
-  cursory = y;
-  showCursor();
+  pageOffset += cursorUnit * (2+choices[choices.length -1].length);
+  pageY -= 0.5 * (choices.length - 1) * lineH;
+  pageH += 0.5 * (choices.length - 1) * lineH;
 }
 
 async function getCompletions(){
-  let response = await fetch("http://127.0.0.1:5000/api/query?msg=" + userText);
+  updateParams();
+  address="http://127.0.0.1:5000/api/query?msg=";
+  address+=encodeURIComponent(userPrompt);
+  promptField.value="";
+  address+="&sysPrompt="+encodeURIComponent(sysPrompt);
+  address+="&numOptions="+encodeURIComponent(numOptions);
+  address+="&numTokens="+encodeURIComponent(numTokens);
+  address+="&temp="+encodeURIComponent(temp);
+  let response = await fetch(address);
   let reply = await response.json();
   let array = [];
   for(var choice of reply.choices){
     array.push(choice);
   }
-  while(array.length < 5){
+  while(array.length < numOptions){
     array.push("Error");
   }
   return array;
+}
+
+function updateParams(){
+  sysPrompt = document.getElementById("systemPrompt").value; 
+  userPrompt = document.getElementById("prompt").value; 
+  numOptions = document.getElementById("numOptions").value; 
+  numTokens = document.getElementById("maxTokens").value; 
+  temp = document.getElementById("temperature").value;
 }

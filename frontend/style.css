@@ -5,9 +5,66 @@ html, body {
   align-items: center;
   align-content: center;
   justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: contain;
 }
 canvas {
+  overflow: hidden;
   display: block;
-  overflow-x:scroll !important;
-  border: 3px solid #000;
+  border: 0px solid #000;
+}
+
+#welcomeMsg {
+  position: absolute;
+  font-family:'Courier New', Courier, monospace;
+  z-index: 90;
+  width: 50%;
+  min-width: 400px;
+  max-width: 800px;
+  padding: 80px 100px;
+  overflow-y: scroll;
+  background-color: #faeedd;
+  font-size: 18px;
+  box-shadow: 5px 5px 200px #000;
+}
+
+#settingsMenu {
+  position: absolute;
+  top: 25vh;
+  height: 50vh;
+  left: 25vw;
+  width:50vw;
+  z-index: 99;
+  background: rgba(200,200,200, .7);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 60%;
+  text-align: center;
+}
+
+#settingsClose {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #cc3333;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+}
+
+#btnBar {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
