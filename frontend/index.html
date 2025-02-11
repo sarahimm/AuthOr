@@ -15,16 +15,16 @@
       <p>
         Welcome, writer.
       </p><p>
-        Allow me to introduce you to B.L.E.H.: Borderline Literate Electronic Helper, your new writing assistant. BLEH is here to help you do your work faster, or better, or...something. Actually, I don't know why its been sent to you, only that management is insistent you try it out. Maybe you can figure out what it's good for?
+        Allow me to introduce you to B.L.E.H.: Borderline Literate Electronic Helper, your new writing assistant. B.L.E.H. is here to help you do your work faster, or better, or...something. Actually, I don't know why it's been sent to you, only that Management is insistent you try it out. Maybe you can figure out what it's good for?
       </p><p>
-        BLEH has been trained by all the best writers. Well, trained might be a strong word. Let's just say it's *acquired skills*, overheard something inspiring, perhaps, from all the best people in print*. It'll listen to you, too. This is Fine and Normal and Management doesn't want you to complain about it. But if you're worried...well, you didn't hear it from me, but you can toggle its surveillance mode on/off using CAPS LOCK.
+        B.L.E.H. has been trained by all the best writers. Well, trained might be a strong word. Let's just say it's *acquired skills*, overheard something inspiring, perhaps, from all the best people in print*. It'll listen to you, too. This is Fine and Normal and Management doesn't want you to complain about it. But if you're worried...well, you didn't hear it from me, but you can toggle its surveillance mode on/off using the CONTROL key.
       </p><p style="color: red;">*the ones we could afford, anyway, or the ones who couldn't complain that we couldn't. And nothing too distasteful, mind you, they've been very careful about these things, I've been assured.
       </p><p>
-        Basically, it'll take in anything you write while its red 'RECORDING' light is on. And then when you hit TAB, BLEH will give you some suggestions to continue your piece. Make sure you give it lots of elbow room above, below, and to the right--it gets a little talkative sometimes.
+        Basically, it'll take in anything you write while its red 'RECORDING' light is on. And then when you hit TAB, B.L.E.H. will give you some suggestions to continue your piece. Make sure you give it lots of elbow room above, below, and to the right--it gets a little talkative sometimes.
       </p><p>
         Navigate your page as usual, using 	&#8592; 	&#8593;  	&#8594;  	&#8595; to move the cursor, BKSPACE to put some eraser fluid over the last character, RETURN to go to the start of your current line. Your typewriter's still a typewriter, nothing too crazy.
       </p><p>  
-        The idea's that you carry on with work as usual, letting BLEH write bits and pieces of...whatever you call that nonsense you churn out for us usually. But Management wants to see your work directly, this time, to make sure the system's working as intended. So if you wanted I suppose you could try to draw it out or argue with it or something if it's not being helpful; those pages will make your point more clearly than anything you've ever penned for us. No offense.
+        The idea's that you carry on with work as usual, letting B.L.E.H. write bits and pieces of...whatever you call that nonsense you churn out for us usually. But Management wants to see your work directly, this time, to make sure the system's working as intended. So if you wanted I suppose you could try to draw it out or argue with it or something if it's not being helpful; those pages will make your point more clearly than anything you've ever penned for us. No offense.
       </p><p> 
         It's up to you. Give it a crack, and have fun??? You can always open this page back up if you need, just click on "WELCOME" in the upper right corner.
       </p>
@@ -47,7 +47,7 @@
             <label for="prompt">Text to continue:</label>
             <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Enter text to continue" value="" required>
             <div>
-              <label for="autofill">Autofill text that I type:</label>
+              <label for="autofill">Recording:</label>
               <input type="checkbox" id="autofill" name="autofill" checked="checked">
             </div>
         </div>
@@ -65,8 +65,10 @@
       <button id="settingsClose">X</button>
     </div>
     <div id="btnBar">
-      <button id="welcomeOpen">Welcome</button>
-      <button id="settingsOpen">Settings</button>
+      <button id="recordingBtn"><div id="recordingLight"></div>RECORDING</button>
+      <button id="welcomeOpen">WELCOME</button>
+      <button id="settingsOpen">SETTINGS</button>
+      <button id="savePage">SAVE PAGE</button>
     </div>
 
     <script src="sketch.js"></script>
@@ -106,6 +108,20 @@
       //Open settings menu
       document.getElementById('welcomeOpen').addEventListener('click', function () {
         document.getElementById("welcomeMsg").style.display = "block";
+      });
+
+      //Toggle record
+      document.getElementById('recordingBtn').addEventListener('click', function () {
+        let rec = document.getElementById("autofill");
+        if (rec.checked){
+          document.getElementById("autofill").checked = false;
+          document.getElementById("recordingLight").style.background = "none";
+          document.getElementById("recordingLight").style.boxShadow = "0px 0px 0px red";
+        }else{
+          document.getElementById("autofill").checked = true;
+          document.getElementById("recordingLight").style.background = "red";
+          document.getElementById("recordingLight").style.boxShadow = "0px 0px 3px red";
+        }
       });
 
   </script>

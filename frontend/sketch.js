@@ -1,6 +1,8 @@
 var innerW, canvasH, c, tBase, tCar, tTop;
 var pageW, pageH, pageOffset, pageX, pageY, imgX, imgY, imgW, imgH;
-var pageBuffer, eraser, promptField, sysPromptField;
+var pageBuffer, eraser, promptField, sysPromptField, autofill;
+
+
 function preload(){
   tBase = loadImage("img/Typewriter-base.png");
   tCar = loadImage("img/Typewriter-carriage.png");
@@ -29,6 +31,10 @@ function setup() {
   pageBuffer=createGraphics(pageW, canvasH, P2D);
   pageBuffer.rect(0, 0,pageW, canvasH);
   
+  document.getElementById("savePage").addEventListener('click', function () {
+    pageBuffer.save();
+  });
+
   lineH = 15;
   pageBuffer.textSize(11);
   pageBuffer.textFont('Courier');
@@ -39,6 +45,7 @@ function setup() {
 
   sysPromptField = document.getElementById('systemPrompt');
   promptField = document.getElementById('prompt');
+  autofill = document.getElementById('autofill');
 }
 
 function draw() {
@@ -60,6 +67,7 @@ function keyTyped(){
   }
   if( key==="Enter"){
    pageOffset = -.48 * pageW;
+   return false;
   }
   else{
     pageBuffer.fill(0);
@@ -68,15 +76,28 @@ function keyTyped(){
       pageBuffer.text(newchar,(0.5*pageW) + pageOffset, pageH - 15);
       pageOffset += cursorUnit;
     }
-    if(document.getElementById('autofill').checked){
+    if(autofill.checked){
       promptField.value+=newchar;
     }
+    return false;
   }
 }
 
 function keyPressed(){
   if(document.activeElement === sysPromptField || document.activeElement === promptField ){
     return;
+  }
+  if(key==='Control'){
+    if (autofill.checked){
+      autofill.checked = false;
+      document.getElementById("recordingLight").style.background = "none";
+      document.getElementById("recordingLight").style.boxShadow = "0px 0px 0px red";
+    }else{
+      autofill.checked = true;
+      document.getElementById("recordingLight").style.background = "red";
+      document.getElementById("recordingLight").style.boxShadow = "0px 0px 3px red";
+    }
+    return false;
   }
   if(key=== 'Tab'){
     printCompletions((0.5*pageW) + pageOffset, pageH-15);
@@ -91,6 +112,9 @@ function keyPressed(){
       pageOffset -= cursorUnit;
     }
     pageBuffer.blendMode(BLEND);
+    if(autofill.checked){
+      //Finish!
+    }
   }
   else if(key==='ArrowLeft'){
       move(37, 500);
