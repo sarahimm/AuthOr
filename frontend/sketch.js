@@ -1,6 +1,7 @@
 var innerW, canvasH, c, tBase, tCar, tTop;
 var pageW, pageH, pageOffset, pageX, pageY, imgX, imgY, imgW, imgH;
-var pageBuffer, eraser, promptField, sysPromptField, autofill;
+var pageBuffer, eraser, promptField, autofill;
+var sysRole, sysAdj, userPrompt, numOptions, numTokens, temp;
 
 
 function preload(){
@@ -8,6 +9,8 @@ function preload(){
   tCar = loadImage("img/Typewriter-carriage.png");
   tTop = loadImage("img/Typewriter-top.png");
   logo = loadImage("img/logo.png");
+  BLEH_on = loadImage("img/BLEH-recording.png");
+  BLEH_off = loadImage("img/BLEH-recordingOff.png"); 
 //  bkgd = loadImage("background.jpg");
 }
 function setup() {
@@ -29,12 +32,16 @@ function setup() {
   pageY = canvasH - 0.37 * innerW;
   
   pageBuffer=createGraphics(pageW, canvasH, P2D);
-  pageBuffer.rect(0, 0,pageW, canvasH);
+  pageBuffer.rect(0, 0,pageW, .7 * canvasH);
   
   document.getElementById("savePage").addEventListener('click', function () {
     pageBuffer.save();
   });
 
+  document.getElementById("newPage").addEventListener('click', function() {
+    pageBuffer.fill(256);
+    pageBuffer.rect(0, 0, pageW, .7 * canvasH);
+  })
   lineH = 15;
   pageBuffer.textSize(11);
   pageBuffer.textFont('Courier');
@@ -43,9 +50,11 @@ function setup() {
   eraser.setAlpha(150);
   strokeWeight(0);
 
-  sysPromptField = document.getElementById('systemPrompt');
   promptField = document.getElementById('prompt');
   autofill = document.getElementById('autofill');
+
+  userPrompt = "";
+  angleMode(DEGREES);
 }
 
 function draw() {
@@ -53,16 +62,30 @@ function draw() {
   background('AntiqueWhite');
  // image(bkgd, -0.1 * imgW, -0.2 * imgH, imgW, imgH);
   blendMode(MULTIPLY);
-  image(logo, 0, 15, 180, 100);
+  image(logo, canvasW - 180, 20, 180, 100);
   blendMode(BLEND);
-  image(tBase, imgX, imgY, imgW, imgH);
+  //image(tBase, imgX, imgY, imgW, imgH);
+
+  if(autofill.checked){
+    image(BLEH_on,0, 0, .3* canvasW, .4 * canvasW);
+  }else{
+    image(BLEH_off, 0, 0, .3 * canvasW, .4 * canvasW);
+  }
+  /*rect(.04 * canvasW, .195 * canvasW, 20, textWidth(userPrompt));
+  fill(0);
+  rotate(-90);
+  text(userPrompt, -textWidth(userPrompt) -.195 * canvasW, 14 + .04 * canvasW);
+  rotate(90);
+  fill("white");
+  */
   copy(pageBuffer, 0, 0, int(pageW), int(pageH), int(pageX - pageOffset), int(pageY), int(pageW), int(pageH));
   image(tCar,  imgX-pageOffset - 0.008 * innerW, imgY, imgW, imgH);
   image(tTop,  imgX, imgY, imgW, imgH);
+  
 }
 
 function keyTyped(){
-  if(document.activeElement === promptField || document.activeElement === sysPromptField){
+  if(document.activeElement === promptField){
     return;
   }
   if( key==="Enter"){
@@ -79,12 +102,14 @@ function keyTyped(){
     if(autofill.checked){
       promptField.value+=newchar;
     }
+    userPrompt = promptField.value;
+    document.getElementById('currentPrompt').innerText = userPrompt;
     return false;
   }
 }
 
 function keyPressed(){
-  if(document.activeElement === sysPromptField || document.activeElement === promptField ){
+  if(document.activeElement === promptField ){
     return;
   }
   if(key==='Control'){
@@ -113,7 +138,9 @@ function keyPressed(){
     }
     pageBuffer.blendMode(BLEND);
     if(autofill.checked){
-      //Finish!
+      promptField.value = promptField.value.slice(0,-1);
+      document.getElementById('currentPrompt').innerText = promptField.value;
+      return false;
     }
   }
   else if(key==='ArrowLeft'){
@@ -184,7 +211,8 @@ async function getCompletions(){
   address="http://127.0.0.1:5000/api/query?msg=";
   address+=encodeURIComponent(userPrompt);
   promptField.value="";
-  address+="&sysPrompt="+encodeURIComponent(sysPrompt);
+  document.getElementById('currentPrompt').innerText = "";
+  address+="&sysPrompt="+encodeURIComponent("You are a " + sysRole + " assistant. Continue the sentence or line you are given by providing the most " + sysAdj + " next word or phrase.");
   address+="&numOptions="+encodeURIComponent(numOptions);
   address+="&numTokens="+encodeURIComponent(numTokens);
   address+="&temp="+encodeURIComponent(temp);
@@ -201,7 +229,8 @@ async function getCompletions(){
 }
 
 function updateParams(){
-  sysPrompt = document.getElementById("systemPrompt").value; 
+  sysRole = document.getElementById("role").value;
+  sysAdj = document.getElementById("adjective").value;
   userPrompt = document.getElementById("prompt").value; 
   numOptions = document.getElementById("numOptions").value; 
   numTokens = document.getElementById("maxTokens").value; 

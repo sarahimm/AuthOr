@@ -8,8 +8,8 @@
 
   </head>
   <body>
+    <div id="promptWindow">Text to continue: <span id="currentPrompt"></span></div>
     <main>
-      
     </main>
     <div id="welcomeMsg">
       <p>
@@ -18,29 +18,46 @@
         Allow me to introduce you to B.L.E.H.: Borderline Literate Electronic Helper, your new writing assistant. B.L.E.H. is here to help you do your work faster, or better, or...something. Actually, I don't know why it's been sent to you, only that Management is insistent you try it out. Maybe you can figure out what it's good for?
       </p><p>
         B.L.E.H. has been trained by all the best writers. Well, trained might be a strong word. Let's just say it's *acquired skills*, overheard something inspiring, perhaps, from all the best people in print*. It'll listen to you, too. This is Fine and Normal and Management doesn't want you to complain about it. But if you're worried...well, you didn't hear it from me, but you can toggle its surveillance mode on/off using the CONTROL key.
-      </p><p style="color: red;">*the ones we could afford, anyway, or the ones who couldn't complain that we couldn't. And nothing too distasteful, mind you, they've been very careful about these things, I've been assured.
+      </p><p style="color: darkred;">*the ones we could afford, anyway, or the ones who couldn't complain that we couldn't. And nothing too distasteful, mind you.
       </p><p>
         Basically, it'll take in anything you write while its red 'RECORDING' light is on. And then when you hit TAB, B.L.E.H. will give you some suggestions to continue your piece. Make sure you give it lots of elbow room above, below, and to the right--it gets a little talkative sometimes.
       </p><p>
-        Navigate your page as usual, using 	&#8592; 	&#8593;  	&#8594;  	&#8595; to move the cursor, BKSPACE to put some eraser fluid over the last character, RETURN to go to the start of your current line. Your typewriter's still a typewriter, nothing too crazy.
+        Navigate your page as usual, using 	&#8592; 	&#8593;  	&#8594;  	&#8595; to move the cursor, BKSPACE to put some eraser fluid over the last character, and ENTER/RETURN to go to the start of your current line. Your typewriter's still a typewriter, nothing too crazy.
       </p><p>  
         The idea's that you carry on with work as usual, letting B.L.E.H. write bits and pieces of...whatever you call that nonsense you churn out for us usually. But Management wants to see your work directly, this time, to make sure the system's working as intended. So if you wanted I suppose you could try to draw it out or argue with it or something if it's not being helpful; those pages will make your point more clearly than anything you've ever penned for us. No offense.
       </p><p> 
-        It's up to you. Give it a crack, and have fun??? You can always open this page back up if you need, just click on "WELCOME" in the upper right corner.
+        It's up to you. Give it a crack, and have fun(???). You can always open this page back up if you need, just click on "WELCOME" in the upper right corner.
       </p>
       <button id="welcomeClose">Proceed</button>
     </div>
     <div id="settingsMenu">
       <form action="#" method="POST">
         <div>
-            <label for="systemPrompt">System Prompt:</label>
-            <input type="text" id="systemPrompt" name="systemPrompt" maxlength="200" value="You are a writing assistant. Give the most creative word or short phrase to continue the story you're told." required>
-        </div>
+            <label for="role">You are a </label>
 
+            <select name="role" id="role">
+              <option value="writing">writing</option>
+              <option value="storytelling">storytelling</option>
+              <option value="poetry">poetry</option>
+              <option value="newswriting">newswriting</option>
+            </select> 
+
+            <label for="adjective">assistant. Continue the sentence or line you are given by providing the most  </label>
+
+            <select name="adjective" id="adjective">
+              <option value="likely">likely</option>
+              <option value="creative">creative</option>
+              <option value="beautiful">beautiful</option>
+              <option value="improbable">improbable</option>
+              <option value="dramatic">dramatic</option>
+            </select> 
+
+            next word or phrase. 
+        </div>
         <div>
             <label for="temperature">Temperature (0-1):</label>
-            <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.5" required>
-            <span id="temperatureValue">0.5</span>
+            <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.7" required>
+            <span id="temperatureValue">0.7</span>
         </div>
 
         <div>
@@ -52,9 +69,9 @@
             </div>
         </div>
         <div>
-          <label for="maxTokens">Max tokens (1-20):</label>
-          <input type="range" id="maxTokens" name="maxTokens" min="1" max="20" value="20" required>
-          <span id="maxTokensValue">20</span>
+          <label for="maxTokens">Max tokens (1-15):</label>
+          <input type="range" id="maxTokens" name="maxTokens" min="1" max="15" value="6" required>
+          <span id="maxTokensValue">6</span>
       </div>
         <div>
             <label for="numOptions"># of options (1-5):</label>
@@ -69,6 +86,7 @@
       <button id="welcomeOpen">WELCOME</button>
       <button id="settingsOpen">SETTINGS</button>
       <button id="savePage">SAVE PAGE</button>
+      <button id="newPage">NEW PAGE</button>
     </div>
 
     <script src="sketch.js"></script>

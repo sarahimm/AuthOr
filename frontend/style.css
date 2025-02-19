@@ -87,3 +87,18 @@ form {
   border-radius: 0 0 8px 8px;
   padding: 3px;
 }
+
+#promptWindow {
+  position: absolute;
+  width: 50vw;
+  max-width: 600px;
+  left: max(25vw, calc(50vw - 300px));
+  top: 15px;
+  height: 20px;
+  background-color: rgba(256,256,256,0.3);
+  padding: 5px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scroll-snap-align: bottom;
+  scrollbar-color: #fff;
+}
