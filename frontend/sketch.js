@@ -31,7 +31,7 @@ function setup() {
   pageX = (0.285 * innerW) + marginL;
   pageY = canvasH - 0.37 * innerW;
   
-  pageBuffer=createGraphics(pageW, canvasH, P2D);
+  pageBuffer=createGraphics(pageW, .7 * canvasH, P2D);
   pageBuffer.rect(0, 0,pageW, .7 * canvasH);
   
   document.getElementById("savePage").addEventListener('click', function () {
@@ -61,8 +61,8 @@ function draw() {
   noStroke();
   background('AntiqueWhite');
  // image(bkgd, -0.1 * imgW, -0.2 * imgH, imgW, imgH);
-  blendMode(MULTIPLY);
-  image(logo, canvasW - 180, 20, 180, 100);
+  //blendMode(MULTIPLY);
+  //image(logo, canvasW - 180, 20, 180, 100);
   blendMode(BLEND);
   //image(tBase, imgX, imgY, imgW, imgH);
 

@@ -17,7 +17,7 @@ canvas {
 
 #welcomeMsg {
   position: absolute;
-  font-family:'Courier New', Courier, monospace;
+  font-family:'Georgia', serif;
   z-index: 90;
   width: 50%;
   min-width: 400px;
