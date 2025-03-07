@@ -11,7 +11,8 @@ function preload(){
   logo = loadImage("img/logo.png");
   BLEH_on = loadImage("img/BLEH-recording.png");
   BLEH_off = loadImage("img/BLEH-recordingOff.png"); 
-//  bkgd = loadImage("background.jpg");
+  table = loadImage("img/marble.png");
+  wall = loadImage("img/wall2.png");
 }
 function setup() {
   canvasH=window.innerHeight;
@@ -32,6 +33,7 @@ function setup() {
   pageY = canvasH - 0.37 * innerW;
   
   pageBuffer=createGraphics(pageW, .7 * canvasH, P2D);
+  pageBuffer.fill(256);
   pageBuffer.rect(0, 0,pageW, .7 * canvasH);
   
   document.getElementById("savePage").addEventListener('click', function () {
@@ -60,17 +62,32 @@ function setup() {
 function draw() {
   noStroke();
   background('AntiqueWhite');
- // image(bkgd, -0.1 * imgW, -0.2 * imgH, imgW, imgH);
   //blendMode(MULTIPLY);
   //image(logo, canvasW - 180, 20, 180, 100);
   blendMode(BLEND);
+  fill(60, 40, 25);
+  image(wall, -0.5 * canvasW, -0.3 * canvasH, 1.5 * canvasW, 1.5 * canvasH, 0, 0, wall.width, wall.height, COVER);
+  quad(-.37*canvasW, 1.56 * canvasH, .04*canvasW, .48*canvasH, .96*canvasW, .48*canvasH, 1.37*canvasW, 1.56 * canvasH);
+  image(table,-0.25 * canvasW, .5*canvasH, 1.5* canvasW, canvasH);
   //image(tBase, imgX, imgY, imgW, imgH);
-
+  stroke(0);
+  rotate(-5);
+  fill(60,15,5);
+  rect(.09*canvasW, .69*canvasH, 30, 80);
+  rect(5 + .09*canvasW, 20 + .69*canvasH, 10, 40);
+  ellipse(15+ 0.09*canvasW, 80 + .69*canvasH, 30,20);
+  rect(.25*canvasW, .68*canvasH, 28, 74);
+  ellipse(14+ 0.25*canvasW, 74 + .68*canvasH, 28,20);
+  fill(70,25,15);
+  rect(5 + .09*canvasW, 18 + .69*canvasH, 10, 60);
+  rect(5 + .25*canvasW, 19 + .68*canvasH, 10, 50);
   if(autofill.checked){
-    image(BLEH_on,0, 0, .3* canvasW, .4 * canvasW);
+    image(BLEH_on,0, 0, .28* canvasW, .38 * canvasW);
   }else{
-    image(BLEH_off, 0, 0, .3 * canvasW, .4 * canvasW);
+    image(BLEH_off, 0, 0, .28 * canvasW, .38 * canvasW);
   }
+
+  rotate(5);
   /*rect(.04 * canvasW, .195 * canvasW, 20, textWidth(userPrompt));
   fill(0);
   rotate(-90);
