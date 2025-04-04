@@ -2,6 +2,8 @@ var innerW, canvasH, c, tBase, tCar, tTop;
 var pageW, pageH, pageOffset, pageX, pageY, imgX, imgY, imgW, imgH;
 var pageBuffer, eraser, promptField, autofill;
 var sysRole, sysAdj, userPrompt, numOptions, numTokens, temp;
+var hitSounds = [];
+var rtrnSound, scrollSound;
 
 
 function preload(){
@@ -13,6 +15,9 @@ function preload(){
   BLEH_off = loadImage("img/BLEH-recordingOff.png"); 
   table = loadImage("img/marble.png");
   wall = loadImage("img/wall2.png");
+  hitSounds.push(loadSound('sound/hit1.wav'),loadSound('sound/hit2.wav'),loadSound('sound/hit3.wav'),loadSound('sound/hit4.wav'), loadSound('sound/hit5.wav'), loadSound('sound/hit5.wav'), loadSound('sound/hit5.wav'));
+  rtrnSound = loadSound('sound/return.wav');
+  scrollSound = loadSound('sound/scroll.mp3');
 }
 function setup() {
   canvasH=window.innerHeight;
@@ -73,14 +78,14 @@ function draw() {
   stroke(0);
   rotate(-5);
   fill(60,15,5);
-  rect(.09*canvasW, .69*canvasH, 30, 80);
-  rect(5 + .09*canvasW, 20 + .69*canvasH, 10, 40);
-  ellipse(15+ 0.09*canvasW, 80 + .69*canvasH, 30,20);
-  rect(.25*canvasW, .68*canvasH, 28, 74);
-  ellipse(14+ 0.25*canvasW, 74 + .68*canvasH, 28,20);
+  rect(.09*canvasW, .67*canvasH, 30, 80);
+  rect(5 + .09*canvasW, 20 + .67*canvasH, 10, 40);
+  ellipse(15+ 0.09*canvasW, 80 + .67*canvasH, 30,20);
+  rect(.25*canvasW, .66*canvasH, 28, 74);
+  ellipse(14+ 0.25*canvasW, 74 + .66*canvasH, 28,20);
   fill(70,25,15);
-  rect(5 + .09*canvasW, 18 + .69*canvasH, 10, 60);
-  rect(5 + .25*canvasW, 19 + .68*canvasH, 10, 50);
+  rect(5 + .09*canvasW, 18 + .67*canvasH, 10, 60);
+  rect(5 + .25*canvasW, 19 + .66*canvasH, 10, 50);
   if(autofill.checked){
     image(BLEH_on,0, 0, .28* canvasW, .38 * canvasW);
   }else{
@@ -100,18 +105,28 @@ function draw() {
   image(tTop,  imgX, imgY, imgW, imgH);
   
 }
-
+function carReturn(){
+  if(pageOffset > -.48*pageW){
+    pageOffset -= .01*pageW;
+    setTimeout(carReturn,5);
+  }
+  else{
+    pageOffset = -.48*pageW;
+  }
+}
 function keyTyped(){
   if(document.activeElement === promptField){
     return;
   }
   if( key==="Enter"){
-   pageOffset = -.48 * pageW;
+   rtrnSound.play();
+   setTimeout(carReturn, 5);
    return false;
   }
   else{
     pageBuffer.fill(0);
     newchar=key;
+    hitSounds[Math.floor(Math.random()*7)].play();
     if(pageOffset < pageW * 0.48){
       pageBuffer.text(newchar,(0.5*pageW) + pageOffset, pageH - 15);
       pageOffset += cursorUnit;
@@ -149,6 +164,7 @@ function keyPressed(){
     pageBuffer.fill(eraser);
     pageBuffer.noStroke();
     pageBuffer.blendMode(LIGHTEST);
+    hitSounds[Math.floor(Math.random()*6)].play();
     if(pageOffset > -0.48 * pageW){
       pageBuffer.rect((0.5*pageW) + pageOffset - cursorUnit, pageH - 30, cursorUnit, 20); 
       pageOffset -= cursorUnit;
@@ -176,6 +192,7 @@ function keyPressed(){
 
 function move(keycode, wait){
   if(keyIsDown(keycode)){
+    let sound;
     if(keycode==37){ //Left
       if(pageOffset > pageW * -0.48){
         pageOffset -= cursorUnit;
@@ -194,6 +211,9 @@ function move(keycode, wait){
         pageY -= 0.5 * lineH;
         pageH += 0.5 * lineH;
       }
+    }
+    if(! scrollSound.isPlaying()){
+      scrollSound.play();
     }
     setTimeout(function(){move(keycode, max(50,.7 *wait));}, wait);
   }
@@ -218,17 +238,19 @@ async function printCompletions(x,y,num){
     }
     y2 += lineH;
   }
-  pageOffset += cursorUnit * (2+choices[choices.length -1].length);
-  pageY -= 0.5 * (choices.length - 1) * lineH;
-  pageH += 0.5 * (choices.length - 1) * lineH;
+  //Move to beginning of middle suggestion
+  pageOffset += 2 * cursorUnit;
+  //Move to end of bottom suggestion
+  //pageOffset += cursorUnit * (2+choices[choices.length -1].length);
+  //pageY -= 0.5 * (choices.length - 1) * lineH;
+  //pageH += 0.5 * (choices.length - 1) * lineH;
 }
 
 async function getCompletions(){
   updateParams();
   address="http://127.0.0.1:5000/api/query?msg=";
   address+=encodeURIComponent(userPrompt);
-  promptField.value="";
-  document.getElementById('currentPrompt').innerText = "";
+  userPrompt += " ";
   address+="&sysPrompt="+encodeURIComponent("You are a " + sysRole + " assistant. Continue the sentence or line you are given by providing the most " + sysAdj + " next word or phrase.");
   address+="&numOptions="+encodeURIComponent(numOptions);
   address+="&numTokens="+encodeURIComponent(numTokens);

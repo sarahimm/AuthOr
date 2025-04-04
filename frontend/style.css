@@ -94,11 +94,31 @@ form {
   max-width: 600px;
   left: max(25vw, calc(50vw - 300px));
   top: 15px;
-  height: 20px;
+  height: 60px;
   background-color: rgba(256,256,256,0.6);
   padding: 5px;
   overflow-y: scroll;
-  scrollbar-width: thin;
+  scrollbar-width: 10px;
   scroll-snap-align: bottom;
   scrollbar-color: #fff;
+}
+
+#instructions {
+  position: absolute;
+  text-align: center;
+  padding: 25px;
+  width: 20vw;
+  height: fit-content;
+  left: 5vw;
+  bottom: 0;
+  display: block;
+  color: #faebd7;
+}
+
+span.key {
+  color: rgb(75,5,5);
+  background-color: rgb(255, 246, 234);
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 3px;
 }
