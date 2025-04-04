@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="promptWindow">Text to continue: <span id="currentPrompt"></span></div>
-    <main>
+    <main id="main">
     </main>
     <div id="welcomeMsg">
       <p>
@@ -17,10 +17,11 @@
       </p><p>
         Allow me to introduce you to B.L.E.H.: Borderline Literate Electronic Helper, your new writing assistant. B.L.E.H. is here to help you do your work faster, or better, or...something. Actually, I don't know why it's been sent to you, only that Management is insistent you try it out. Maybe you can figure out what it's good for?
       </p><p>
-        B.L.E.H. has been trained by all the best writers. Well, trained might be a strong word. Let's just say it's <i>acquired skills</i>, overheard something inspiring, perhaps, from all the best people in print*. It'll listen to you, too. This is Fine and Normal and Management doesn't want you to complain about it. But if you're worried...well, you didn't hear it from me, but you can toggle its surveillance mode on/off using the CONTROL key.
-      </p><p style="color: darkred;">*the ones we could afford, anyway, or the ones who couldn't complain that we couldn't. And nothing too distasteful, mind you.
-      </p><p>
-        Basically, it'll take in anything you write while its red 'RECORDING' light is on. And then when you hit TAB, B.L.E.H. will give you some suggestions to continue your piece. Make sure you give it lots of elbow room above, below, and to the right--it gets a little talkative sometimes.
+        B.L.E.H. has been trained by all the best writers. Well, trained might be a strong word. Let's just say it's <i>acquired skills</i>, overheard something inspiring, perhaps, from all the best people in print (the ones we could afford, anyway, or the ones who couldn't complain that we couldn't).
+      </p>
+      <p>
+        Basically, it'll take in anything you write while its red 'RECORDING' light is on. If you want anything you write to pass under its radar, you can toggle its recording off and on with the CTRL button--but if anyone asks, you didn't hear it from me.
+      </p><p>Any time you hit TAB, B.L.E.H. will give you some suggestions to continue your piece. <b>Make sure you give it lots of elbow room above, below, and to the right--it gets a little talkative sometimes.</b>
       </p><p>
         Navigate your page as usual, using 	&#8592; 	&#8593;  	&#8594;  	&#8595; to move the cursor, BKSPACE to put some eraser fluid over the last character, and ENTER/RETURN to go to the start of your current line. Your typewriter's still a typewriter, nothing too crazy.
       </p><p>  
@@ -66,7 +67,7 @@
         </div>
 
         <div>
-            <label for="prompt">Text to continue:</label>
+            <label for="prompt">What B.L.E.H. has heard:</label>
             <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Enter text to continue" value="" required>
             <div>
               <label for="autofill">Recording:</label>
@@ -90,7 +91,7 @@
       <button id="recordingBtn"><div id="recordingLight"></div>RECORDING</button>
       <button id="welcomeOpen">WELCOME</button>
       <button id="settingsOpen">SETTINGS</button>
-      <button id="savePage">SAVE PAGE</button>
+      <button id="savePage">PRINT</button>
       <button id="newPage">NEW PAGE</button>
     </div>
 

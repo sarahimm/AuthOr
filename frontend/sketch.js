@@ -4,6 +4,7 @@ var pageBuffer, eraser, promptField, autofill;
 var sysRole, sysAdj, userPrompt, numOptions, numTokens, temp;
 var hitSounds = [];
 var rtrnSound, scrollSound;
+var PRINTING = false;
 
 
 function preload(){
@@ -37,20 +38,23 @@ function setup() {
   pageX = (0.285 * innerW) + marginL;
   pageY = canvasH - 0.37 * innerW;
   
-  pageBuffer=createGraphics(pageW, .7 * canvasH, P2D);
+  pageBuffer=createGraphics(pageW, pageW * 1.414, P2D);
   pageBuffer.fill(256);
-  pageBuffer.rect(0, 0,pageW, .7 * canvasH);
+  pageBuffer.noStroke();
+  pageBuffer.rect(0, 0,pageW, pageW * 1.414);
   
-  document.getElementById("savePage").addEventListener('click', function () {
+ /* document.getElementById("savePage").addEventListener('click', function () {
     pageBuffer.save();
   });
+  */
+  document.getElementById("savePage").addEventListener('click', function() {printPage();});
 
   document.getElementById("newPage").addEventListener('click', function() {
     pageBuffer.fill(256);
     pageBuffer.rect(0, 0, pageW, .7 * canvasH);
   })
   lineH = 15;
-  pageBuffer.textSize(11);
+  pageBuffer.textSize(12);
   pageBuffer.textFont('Courier');
   cursorUnit = textWidth('a');
   eraser=color(245);
@@ -78,14 +82,14 @@ function draw() {
   stroke(0);
   rotate(-5);
   fill(60,15,5);
-  rect(.09*canvasW, .67*canvasH, 30, 80);
-  rect(5 + .09*canvasW, 20 + .67*canvasH, 10, 40);
-  ellipse(15+ 0.09*canvasW, 80 + .67*canvasH, 30,20);
-  rect(.25*canvasW, .66*canvasH, 28, 74);
-  ellipse(14+ 0.25*canvasW, 74 + .66*canvasH, 28,20);
+  rect(.09*canvasW, .37*canvasW, 30, 80);
+  rect(5 + .09*canvasW, 20 + .37*canvasW, 10, 40);
+  ellipse(15+ 0.09*canvasW, 80 + .37*canvasW, 30,20);
+  rect(.25*canvasW, .37*canvasW, 28, 74);
+  ellipse(14+ 0.25*canvasW, 74 + .37*canvasW, 28,20);
   fill(70,25,15);
-  rect(5 + .09*canvasW, 18 + .67*canvasH, 10, 60);
-  rect(5 + .25*canvasW, 19 + .66*canvasH, 10, 50);
+  rect(5 + .09*canvasW, 18 + .37*canvasW, 10, 60);
+  rect(5 + .25*canvasW, 19 + .37*canvasW, 10, 50);
   if(autofill.checked){
     image(BLEH_on,0, 0, .28* canvasW, .38 * canvasW);
   }else{
@@ -103,7 +107,10 @@ function draw() {
   copy(pageBuffer, 0, 0, int(pageW), int(pageH), int(pageX - pageOffset), int(pageY), int(pageW), int(pageH));
   image(tCar,  imgX-pageOffset - 0.008 * innerW, imgY, imgW, imgH);
   image(tTop,  imgX, imgY, imgW, imgH);
-  
+
+  if(PRINTING){
+    copy(pageBuffer, 0, 0, int(pageW), int(pageW * 1.414), 0, 0, int(.707*window.innerHeight), int(window.innerHeight));
+  }
 }
 function carReturn(){
   if(pageOffset > -.48*pageW){
@@ -207,7 +214,7 @@ function move(keycode, wait){
         pageH -= 0.5 * lineH;
       }
     }else if (keycode==40){ //Down
-      if(pageY > 20){
+      if((pageH + .5 * lineH)< pageBuffer.height){
         pageY -= 0.5 * lineH;
         pageH += 0.5 * lineH;
       }
@@ -229,7 +236,7 @@ async function printCompletions(x,y,num){
     pageBuffer.strokeWeight(1);
     pageBuffer.noFill();
     pageBuffer.bezier(x,y - 0.2*lineH,x2,y - 0.2*lineH,x,y2 - 0.2*lineH,x2,y2 - 0.2*lineH);
-    pageBuffer.fill(0,200,0);
+    pageBuffer.fill(0,128,0);
     pageBuffer.strokeWeight(0);
     let linex = x2;
     for(var cha of choice){ 
@@ -274,4 +281,22 @@ function updateParams(){
   numOptions = document.getElementById("numOptions").value; 
   numTokens = document.getElementById("maxTokens").value; 
   temp = document.getElementById("temperature").value;
+}
+
+function printPage(){
+    PRINTING = true;
+    resizeCanvas(.707*window.innerHeight, window.innerHeight);
+    var dataURL = document.getElementById("defaultCanvas0").toDataURL();
+    var winContent ='<!DOCTYPE html><html><head><title>Print page</title></head><body><img src="'+dataURL+'"></body></html>'
+    var winPrint = window.open('','','left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+    winPrint.document.open();
+    winPrint.document.write(winContent);
+    winPrint.document.addEventListener('load', function() {
+        winPrint.focus();
+        winPrint.print();
+        winPrint.document.close();
+        winPrint.close();
+        PRINTING = false;
+        resizeCanvas(window.innerWidth, window.innerHeight);
+    },true);
 }
