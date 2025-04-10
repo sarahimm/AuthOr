@@ -33,8 +33,8 @@
     </div>
     <div id="instructions">
       <p>Press <span class="key">TAB</span> to ask BLEH for completions</p>
-      <p>BLEH will continue whatever you write while the 'RECORDING' light is on</p>
-      <p>Press <span class="key">CTRL</span> to turn BLEH's recordings on or off</p>
+      <p>BLEH will continue whatever you've written while the 'RECORDING' light was on</p>
+      <p>Press <span class="key">CTRL</span> to turn BLEH's recording on or off</p>
     </div>
     <div id="settingsMenu">
       <form action="#" method="POST">
@@ -45,14 +45,14 @@
               <option value="writing">writing</option>
               <option value="storytelling">storytelling</option>
               <option value="poetry">poetry</option>
-              <option value="newswriting">newswriting</option>
+              <option value="newswriting">news writing</option>
             </select> 
 
             <label for="adjective">assistant. Continue the sentence or line you are given by providing the most  </label>
 
             <select name="adjective" id="adjective">
               <option value="likely">likely</option>
-              <option value="creative">creative</option>
+              <option value="creative" selected="selected">creative</option>
               <option value="beautiful">beautiful</option>
               <option value="improbable">improbable</option>
               <option value="dramatic">dramatic</option>
@@ -62,8 +62,8 @@
         </div>
         <div>
             <label for="temperature">Temperature (0-1):</label>
-            <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.7" required>
-            <span id="temperatureValue">0.7</span>
+            <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.8" required>
+            <span id="temperatureValue">0.8</span>
         </div>
 
         <div>
@@ -117,21 +117,25 @@
       //Close settings menu
       document.getElementById('settingsClose').addEventListener('click', function () {
         document.getElementById("settingsMenu").style.display = "none";
+        document.getElementById('settingsClose').blur();
       });
 
       //Open settings menu
       document.getElementById('settingsOpen').addEventListener('click', function () {
         document.getElementById("settingsMenu").style.display = "flex";
+        document.getElementById('settingsOpen').blur();
       });
 
       //Close welcome msg
       document.getElementById('welcomeClose').addEventListener('click', function () {
         document.getElementById("welcomeMsg").style.display = "none";
+        document.getElementById('welcomeClose').blur();
       });
 
-      //Open settings menu
+      //Open welcome page
       document.getElementById('welcomeOpen').addEventListener('click', function () {
         document.getElementById("welcomeMsg").style.display = "block";
+        document.getElementById('welcomeOpen').blur();
       });
 
       //Toggle record
@@ -146,6 +150,7 @@
           document.getElementById("recordingLight").style.background = "red";
           document.getElementById("recordingLight").style.boxShadow = "0px 0px 3px red";
         }
+        document.getElementById('recordingBtn').blur();
       });
 
   </script>

@@ -9,6 +9,7 @@ var PRINTING = false;
 
 function preload(){
   tBase = loadImage("img/Typewriter-base.png");
+  tCarL = loadImage("img/Typewriter-carriage-lower.png");
   tCar = loadImage("img/Typewriter-carriage.png");
   tTop = loadImage("img/Typewriter-top.png");
   logo = loadImage("img/logo.png");
@@ -18,7 +19,9 @@ function preload(){
   wall = loadImage("img/wall2.png");
   hitSounds.push(loadSound('sound/hit1.wav'),loadSound('sound/hit2.wav'),loadSound('sound/hit3.wav'),loadSound('sound/hit4.wav'), loadSound('sound/hit5.wav'), loadSound('sound/hit5.wav'), loadSound('sound/hit5.wav'));
   rtrnSound = loadSound('sound/return.wav');
-  scrollSound = loadSound('sound/scroll.mp3');
+  scrollSound = loadSound('sound/scroll_cut.mp3');
+  completionSound = loadSound('sound/complete.mp3');
+  genSound = loadSound('sound/gen.mp3');
 }
 function setup() {
   canvasH=window.innerHeight;
@@ -47,11 +50,18 @@ function setup() {
     pageBuffer.save();
   });
   */
-  document.getElementById("savePage").addEventListener('click', function() {printPage();});
+  document.getElementById("savePage").addEventListener('click', function() {printPage();this.blur()});
 
   document.getElementById("newPage").addEventListener('click', function() {
     pageBuffer.fill(256);
     pageBuffer.rect(0, 0, pageW, .7 * canvasH);
+    userPrompt = "";
+    promptField.value = "";
+    document.getElementById("currentPrompt").innerText = "";
+    pageOffset = -.48 * pageW;
+    pageY = pageY = canvasH - 0.37 * innerW;
+    pageH = pageH = 0.15 * innerW;
+    this.blur();
   })
   lineH = 15;
   pageBuffer.textSize(12);
@@ -95,15 +105,9 @@ function draw() {
   }else{
     image(BLEH_off, 0, 0, .28 * canvasW, .38 * canvasW);
   }
-
   rotate(5);
-  /*rect(.04 * canvasW, .195 * canvasW, 20, textWidth(userPrompt));
-  fill(0);
-  rotate(-90);
-  text(userPrompt, -textWidth(userPrompt) -.195 * canvasW, 14 + .04 * canvasW);
-  rotate(90);
-  fill("white");
-  */
+
+  image(tCarL,  imgX-pageOffset - 0.008 * innerW, imgY, imgW, imgH);
   copy(pageBuffer, 0, 0, int(pageW), int(pageH), int(pageX - pageOffset), int(pageY), int(pageW), int(pageH));
   image(tCar,  imgX-pageOffset - 0.008 * innerW, imgY, imgW, imgH);
   image(tTop,  imgX, imgY, imgW, imgH);
@@ -148,9 +152,6 @@ function keyTyped(){
 }
 
 function keyPressed(){
-  if(document.activeElement === promptField ){
-    return;
-  }
   if(key==='Control'){
     if (autofill.checked){
       autofill.checked = false;
@@ -199,7 +200,6 @@ function keyPressed(){
 
 function move(keycode, wait){
   if(keyIsDown(keycode)){
-    let sound;
     if(keycode==37){ //Left
       if(pageOffset > pageW * -0.48){
         pageOffset -= cursorUnit;
@@ -222,7 +222,9 @@ function move(keycode, wait){
     if(! scrollSound.isPlaying()){
       scrollSound.play();
     }
-    setTimeout(function(){move(keycode, max(50,.7 *wait));}, wait);
+    setTimeout(function(){
+        move(keycode, max(50,.7 *wait));
+    }, wait);
   }
   return;
 }
@@ -245,6 +247,7 @@ async function printCompletions(x,y,num){
     }
     y2 += lineH;
   }
+  completionSound.play();
   //Move to beginning of middle suggestion
   pageOffset += 2 * cursorUnit;
   //Move to end of bottom suggestion
@@ -254,6 +257,7 @@ async function printCompletions(x,y,num){
 }
 
 async function getCompletions(){
+  genSound.play();
   updateParams();
   address="http://127.0.0.1:5000/api/query?msg=";
   address+=encodeURIComponent(userPrompt);
@@ -271,6 +275,7 @@ async function getCompletions(){
   while(array.length < numOptions){
     array.push("Error");
   }
+  genSound.stop();
   return array;
 }
 
