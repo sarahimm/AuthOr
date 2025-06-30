@@ -85,6 +85,7 @@ form {
   background-color: rgb(255, 246, 234);
   font-size: 16px;
   border-radius: 0 0 8px 8px;
+  border-style: none;
   padding: 3px;
 }
 

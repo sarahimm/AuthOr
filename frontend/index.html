@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="promptWindow">Text to continue: <span id="currentPrompt"></span></div>
-    <main>
+    <main id="main">
     </main>
     <div id="welcomeMsg">
       <p>
@@ -17,10 +17,11 @@
       </p><p>
         Allow me to introduce you to B.L.E.H.: Borderline Literate Electronic Helper, your new writing assistant. B.L.E.H. is here to help you do your work faster, or better, or...something. Actually, I don't know why it's been sent to you, only that Management is insistent you try it out. Maybe you can figure out what it's good for?
       </p><p>
-        B.L.E.H. has been trained by all the best writers. Well, trained might be a strong word. Let's just say it's <i>acquired skills</i>, overheard something inspiring, perhaps, from all the best people in print*. It'll listen to you, too. This is Fine and Normal and Management doesn't want you to complain about it.
-      </p><p style="color: darkred;">*the ones we could afford, anyway, or the ones who couldn't complain that we couldn't. And nothing too distasteful, mind you.
-      </p><p>
-        Basically, it'll take in anything you write while its red 'RECORDING' light is on. And then when you hit TAB, B.L.E.H. will give you some suggestions to continue your piece. Make sure you give it lots of elbow room above, below, and to the right--it gets a little talkative sometimes.
+        B.L.E.H. has been trained by all the best writers. Well, trained might be a strong word. Let's just say it's <i>acquired skills</i>, overheard something inspiring, perhaps, from all the best people in print (the ones we could afford, anyway, or the ones who couldn't complain that we couldn't).
+      </p>
+      <p>
+        Basically, it'll take in anything you write while its red 'RECORDING' light is on. If you want anything you write to pass under its radar, you can toggle its recording off and on with the CTRL button--but if anyone asks, you didn't hear it from me.
+      </p><p>Any time you hit TAB, B.L.E.H. will give you some suggestions to continue your piece. <b>Make sure you give it lots of elbow room above, below, and to the right--it gets a little talkative sometimes.</b>
       </p><p>
         Navigate your page as usual, using 	&#8592; 	&#8593;  	&#8594;  	&#8595; to move the cursor, BKSPACE to put some eraser fluid over the last character, and ENTER/RETURN to go to the start of your current line. Your typewriter's still a typewriter, nothing too crazy.
       </p><p>  
@@ -32,8 +33,8 @@
     </div>
     <div id="instructions">
       <p>Press <span class="key">TAB</span> to ask BLEH for completions</p>
-      <p>BLEH will continue whatever you write while the 'RECORDING' light is on</p>
-      <p>Press <span class="key">CTRL</span> to turn BLEH's recordings on or off</p>
+      <p>BLEH will continue whatever you've written while the 'RECORDING' light was on</p>
+      <p>Press <span class="key">CTRL</span> to turn BLEH's recording on or off</p>
     </div>
     <div id="settingsMenu">
       <form action="#" method="POST">
@@ -44,14 +45,14 @@
               <option value="writing">writing</option>
               <option value="storytelling">storytelling</option>
               <option value="poetry">poetry</option>
-              <option value="newswriting">newswriting</option>
+              <option value="newswriting">news writing</option>
             </select> 
 
             <label for="adjective">assistant. Continue the sentence or line you are given by providing the most  </label>
 
             <select name="adjective" id="adjective">
               <option value="likely">likely</option>
-              <option value="creative">creative</option>
+              <option value="creative" selected="selected">creative</option>
               <option value="beautiful">beautiful</option>
               <option value="improbable">improbable</option>
               <option value="dramatic">dramatic</option>
@@ -61,12 +62,12 @@
         </div>
         <div>
             <label for="temperature">Temperature (0-1):</label>
-            <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.7" required>
-            <span id="temperatureValue">0.7</span>
+            <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.8" required>
+            <span id="temperatureValue">0.8</span>
         </div>
 
         <div>
-            <label for="prompt">Text to continue:</label>
+            <label for="prompt">What B.L.E.H. has heard:</label>
             <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Enter text to continue" value="" required>
             <div>
               <label for="autofill">Recording:</label>
@@ -90,7 +91,7 @@
       <button id="recordingBtn"><div id="recordingLight"></div>RECORDING</button>
       <button id="welcomeOpen">WELCOME</button>
       <button id="settingsOpen">SETTINGS</button>
-      <button id="savePage">SAVE PAGE</button>
+      <button id="savePage">PRINT</button>
       <button id="newPage">NEW PAGE</button>
     </div>
 
@@ -116,21 +117,25 @@
       //Close settings menu
       document.getElementById('settingsClose').addEventListener('click', function () {
         document.getElementById("settingsMenu").style.display = "none";
+        document.getElementById('settingsClose').blur();
       });
 
       //Open settings menu
       document.getElementById('settingsOpen').addEventListener('click', function () {
         document.getElementById("settingsMenu").style.display = "flex";
+        document.getElementById('settingsOpen').blur();
       });
 
       //Close welcome msg
       document.getElementById('welcomeClose').addEventListener('click', function () {
         document.getElementById("welcomeMsg").style.display = "none";
+        document.getElementById('welcomeClose').blur();
       });
 
-      //Open settings menu
+      //Open welcome page
       document.getElementById('welcomeOpen').addEventListener('click', function () {
         document.getElementById("welcomeMsg").style.display = "block";
+        document.getElementById('welcomeOpen').blur();
       });
 
       //Toggle record
@@ -145,6 +150,7 @@
           document.getElementById("recordingLight").style.background = "red";
           document.getElementById("recordingLight").style.boxShadow = "0px 0px 3px red";
         }
+        document.getElementById('recordingBtn').blur();
       });
 
   </script>
