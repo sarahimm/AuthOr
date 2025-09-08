@@ -259,7 +259,7 @@ async function printCompletions(x,y,num){
 async function getCompletions(){
   genSound.play();
   updateParams();
-  address="http://127.0.0.1:5000/api/query?msg=";
+  address="/api/query?msg=";
   address+=encodeURIComponent(userPrompt);
   userPrompt += " ";
   address+="&sysPrompt="+encodeURIComponent("You are a " + sysRole + " assistant. Continue the sentence or line you are given by providing the most " + sysAdj + " next word or phrase.");
