@@ -24,8 +24,8 @@ function preload(){
   genSound = loadSound('sound/gen.mp3');
 }
 function setup() {
-  canvasH=window.innerHeight;
-  canvasW=window.innerWidth;
+  canvasW=min(3000,window.innerWidth);
+  canvasH=min(.75*canvasW,window.innerHeight);
   innerW=min(canvasW, 1.5*canvasH);
   marginL=0.5*(canvasW - innerW);
   c=createCanvas(canvasW, canvasH);
@@ -46,10 +46,6 @@ function setup() {
   pageBuffer.noStroke();
   pageBuffer.rect(0, 0,pageW, pageW * 1.414);
   
- /* document.getElementById("savePage").addEventListener('click', function () {
-    pageBuffer.save();
-  });
-  */
   document.getElementById("savePage").addEventListener('click', function() {printPage();this.blur()});
 
   document.getElementById("newPage").addEventListener('click', function() {
@@ -63,6 +59,7 @@ function setup() {
     pageH = pageH = 0.15 * innerW;
     this.blur();
   })
+  
   lineH = 15;
   pageBuffer.textSize(12);
   pageBuffer.textFont('Courier');
@@ -72,6 +69,7 @@ function setup() {
   strokeWeight(0);
 
   promptField = document.getElementById('prompt');
+  promptField.value = "";
   autofill = document.getElementById('autofill');
 
   userPrompt = "";
@@ -111,6 +109,8 @@ function draw() {
   copy(pageBuffer, 0, 0, int(pageW), int(pageH), int(pageX - pageOffset), int(pageY), int(pageW), int(pageH));
   image(tCar,  imgX-pageOffset - 0.008 * innerW, imgY, imgW, imgH);
   image(tTop,  imgX, imgY, imgW, imgH);
+  fill(120,0,0);
+  triangle(0.496*canvasW,imgY + 0.37*imgH,0.496*canvasW+4,imgY + 0.39*imgH,0.496*canvasW-4,imgY + 0.39*imgH)
 
   if(PRINTING){
     copy(pageBuffer, 0, 0, int(pageW), int(pageW * 1.414), 0, 0, int(.707*window.innerHeight), int(window.innerHeight));

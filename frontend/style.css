@@ -8,6 +8,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   overscroll-behavior: contain;
+  background-color: #013316
 }
 canvas {
   overflow: hidden;
@@ -22,11 +23,13 @@ canvas {
   width: 50%;
   min-width: 400px;
   max-width: 800px;
+  max-height: 80vh;
   padding: 80px 100px;
   overflow-y: scroll;
   background-color: #faeedd;
   font-size: 18px;
   box-shadow: 5px 5px 200px #000;
+  overscroll-behavior: auto;
 }
 
 #settingsMenu {
