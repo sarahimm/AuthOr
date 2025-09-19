@@ -280,7 +280,7 @@ async function getCompletions(){
 }
 
 function updateParams(){
-  sysRole = document.getElementById("role").value;
+  sysRole = document.getElementById("role1").value + " " + document.getElementById("role2").value;
   sysAdj = document.getElementById("adjective").value;
   userPrompt = document.getElementById("prompt").value; 
   numOptions = document.getElementById("numOptions").value; 

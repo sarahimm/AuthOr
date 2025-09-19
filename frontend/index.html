@@ -39,16 +39,30 @@
     <div id="settingsMenu">
       <form action="#" method="POST">
         <div>
-            <label for="role">You are a </label>
+            <label for="role1">You are a </label>
 
-            <select name="role" id="role">
-              <option value="writing">writing</option>
-              <option value="storytelling">storytelling</option>
-              <option value="poetry">poetry</option>
-              <option value="newswriting">news writing</option>
+            <select name="role1" id="role1">
+              <option value="creative">creative</option>
+              <option value="robotic">robotic</option>
+              <option value="impartial">impartial</option>
+              <option value="poetic">poetic</option>
+              <option value="automatic">automatic</option>
+              <option value="stochastic">stochastic</option>
+              <option value="generative">generative</option>
+              <option value="skilled">skilled</option>
             </select> 
 
-            <label for="adjective">assistant. Continue the sentence or line you are given by providing the most  </label>
+            <select name="role2" id="role2">
+              <option value="writing assistant">writing assistant</option>
+              <option value="poet">poet</option>
+              <option value="reporter">reporter</option>
+              <option value="parrot">parrot</option>
+              <option value="storyteller">storyteller</option>
+              <option value="grammatizer">grammatizer</option>
+              <option value="ghostwriter">ghostwriter</option>
+              <option value="autocomplete system">autocomplete system</option>
+            </select>
+            <label for="adjective">. Continue the sentence or line you are given by providing the most  </label>
 
             <select name="adjective" id="adjective">
               <option value="likely">likely</option>
@@ -70,17 +84,17 @@
             <label for="prompt">What B.L.E.H. has heard:</label>
             <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Enter text to continue" value="" required>
             <div>
-              <label for="autofill">Recording:</label>
+              <label for="autofill">Recording light on? (Automatically adds what you type to the prompt)</label>
               <input type="checkbox" id="autofill" name="autofill" checked="checked">
             </div>
         </div>
         <div>
-          <label for="maxTokens">Max tokens (1-15):</label>
+          <label for="maxTokens">Response length (1-15):</label>
           <input type="range" id="maxTokens" name="maxTokens" min="1" max="15" value="6" required>
           <span id="maxTokensValue">6</span>
       </div>
         <div>
-            <label for="numOptions"># of options (1-5):</label>
+            <label for="numOptions">Number of options (1-5):</label>
             <input type="range" id="numOptions" name="numOptions" min="1" max="5" value="5" required>
             <span id="numOptionsValue">5</span>
         </div>
@@ -152,6 +166,15 @@
         }
         document.getElementById('recordingBtn').blur();
       });
+      document.getElementById('autofill').addEventListener('input', function () {
+        if (!this.checked){
+          document.getElementById("recordingLight").style.background = "none";
+          document.getElementById("recordingLight").style.boxShadow = "0px 0px 0px red";
+        }else{
+          document.getElementById("recordingLight").style.background = "red";
+          document.getElementById("recordingLight").style.boxShadow = "0px 0px 3px red";
+        }
+      })
 
   </script>
   </body>
