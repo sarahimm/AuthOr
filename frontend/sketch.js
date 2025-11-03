@@ -17,6 +17,7 @@ function preload(){
   BLEH_off = loadImage("img/BLEH-recordingOff.png"); 
   table = loadImage("img/marble.png");
   wall = loadImage("img/wall2.png");
+  logo = loadImage("img/logo.png");
   hitSounds.push(loadSound('sound/hit1.wav'),loadSound('sound/hit2.wav'),loadSound('sound/hit3.wav'),loadSound('sound/hit4.wav'), loadSound('sound/hit5.wav'), loadSound('sound/hit5.wav'), loadSound('sound/hit5.wav'));
   rtrnSound = loadSound('sound/return.wav');
   scrollSound = loadSound('sound/scroll_cut.mp3');
@@ -47,6 +48,7 @@ function setup() {
   pageBuffer.rect(0, 0,pageW, pageW * 1.414);
   
   document.getElementById("savePage").addEventListener('click', function() {printPage();this.blur()});
+  
 
   document.getElementById("newPage").addEventListener('click', function() {
     pageBuffer.fill(256);
@@ -60,13 +62,26 @@ function setup() {
     this.blur();
   })
   
-  lineH = 15;
+  lineH = 17.5;
+  fontSize = 14;
   pageBuffer.textSize(12);
   pageBuffer.textFont('Courier');
   cursorUnit = textWidth('a');
   eraser=color(245);
   eraser.setAlpha(150);
   strokeWeight(0);
+  document.getElementById("fontUp").addEventListener('click', function() {
+    fontSize = min(40, fontSize + 2);
+    lineH += 2.5;
+    pageBuffer.textSize(fontSize);
+    cursorUnit = pageBuffer.textWidth('a');
+  })
+  document.getElementById("fontDown").addEventListener('click', function() {
+    fontSize= max(6, fontSize - 2);
+    lineH += 2.5;
+    pageBuffer.textSize(fontSize);
+    cursorUnit = pageBuffer.textWidth('a');
+  })
 
   promptField = document.getElementById('prompt');
   promptField.value = "";
@@ -74,6 +89,26 @@ function setup() {
 
   userPrompt = "";
   angleMode(DEGREES);
+}
+function windowResized() {
+  canvasW=min(3000,window.innerWidth);
+  canvasH=min(.75*canvasW,window.innerHeight);
+  innerW=min(canvasW, 1.5*canvasH);
+  marginL=0.5*(canvasW - innerW);
+  resizeCanvas(canvasW,canvasH);
+  
+  imgX = (-.2 * innerW) + marginL;
+  imgY = canvasH - innerW * .6;
+  imgW = 1.5 * innerW;
+  imgH = innerW;
+  
+  pageW = 0.42 * innerW;
+  pageH = 0.15 * innerW;
+  pageOffset = -.48 * pageW;
+  pageX = (0.285 * innerW) + marginL;
+  pageY = canvasH - 0.37 * innerW;
+  
+  pageBuffer.resize(pageW, pageW * 1.414)
 }
 
 function draw() {
@@ -111,6 +146,8 @@ function draw() {
   image(tTop,  imgX, imgY, imgW, imgH);
   fill(120,0,0);
   triangle(0.496*canvasW,imgY + 0.37*imgH,0.496*canvasW+4,imgY + 0.39*imgH,0.496*canvasW-4,imgY + 0.39*imgH)
+
+  image(logo, canvasW-520, canvasH-110, 600, 100);
 
   if(PRINTING){
     copy(pageBuffer, 0, 0, int(pageW), int(pageW * 1.414), 0, 0, int(.707*window.innerHeight), int(window.innerHeight));
@@ -238,7 +275,7 @@ async function printCompletions(x,y,num){
     pageBuffer.strokeWeight(1);
     pageBuffer.noFill();
     pageBuffer.bezier(x,y - 0.2*lineH,x2,y - 0.2*lineH,x,y2 - 0.2*lineH,x2,y2 - 0.2*lineH);
-    pageBuffer.fill(0,128,0);
+    pageBuffer.fill(0,108,0);
     pageBuffer.strokeWeight(0);
     let linex = x2;
     for(var cha of choice){ 

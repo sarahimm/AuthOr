@@ -39,7 +39,7 @@
     <div id="settingsMenu">
       <form action="#" method="POST">
         <div>
-            <label for="role1">You are a </label>
+            <label for="role1"><b>B.L.E.H.'s instructions:</b> You are a </label>
 
             <select name="role1" id="role1">
               <option value="creative">creative</option>
@@ -75,30 +75,37 @@
             next word or phrase. 
         </div>
         <div>
-            <label for="temperature">Temperature (0-1):</label>
+            <label for="temperature"><b>How unpredictable would you like B.L.E.H. to be?</b>:</label>
             <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.8" required>
             <span id="temperatureValue">0.8</span>
         </div>
 
         <div>
-            <label for="prompt">What B.L.E.H. has heard:</label>
+            <label for="prompt"><b>Text B.L.E.H. will continue:</b></label>
             <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Enter text to continue" value="" required>
             <div>
-              <label for="autofill">Recording light on? (Automatically adds what you type to the prompt)</label>
+              <label for="autofill"><b>Recording light on?</b> (Automatically adds what you type to the prompt)</label>
               <input type="checkbox" id="autofill" name="autofill" checked="checked">
             </div>
         </div>
         <div>
-          <label for="maxTokens">Response length (1-15):</label>
+          <label for="maxTokens"><b>Maximum suggestion length (1-15)</b>:</label>
           <input type="range" id="maxTokens" name="maxTokens" min="1" max="15" value="6" required>
           <span id="maxTokensValue">6</span>
-      </div>
+        </div>
         <div>
-            <label for="numOptions">Number of options (1-5):</label>
+            <label for="numOptions"><b>Number of suggestions (1-5):</b></label>
             <input type="range" id="numOptions" name="numOptions" min="1" max="5" value="5" required>
             <span id="numOptionsValue">5</span>
         </div>
       </form>
+      <div>
+        <b>Font size*:</b> 
+        <button id="fontDown">-</button>
+        <button id="fontUp">+</button>
+      </div>
+      <div><em>*This will not affect text already on the page. <br> Click 'New Page' after adjusting the size to start over with the new font.</em></div>
+    
       <button id="settingsClose">X</button>
     </div>
     <div id="btnBar">
