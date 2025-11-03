@@ -1,0 +1,768 @@
+skilled poet: 
+{'generated_text': 'shy yet courageous fox whose'}
+{'generated_text': 'souffleur of fate'}
+{'generated_text': 'daring soul who dared to'}
+skilled poet: 
+{'generated_text': 'should never throw stones.'}
+{'generated_text': 'should remember their own vulnerabilities'}
+{'generated_text': 'should watch where they walk,'}
+skilled poet: 
+{'generated_text': 'my mentor, who had always'}
+{'generated_text': 'the boss in a wheelchair,'}
+{'generated_text': 'a swarm of bees buzzing peacefully'}
+skilled writing assistant: 
+{'generated_text': 'giant who was known across'}
+{'generated_text': 'giantess, her eyes'}
+{'generated_text': 'wise old tortoise who taught'}
+skilled writing assistant: 
+{'generated_text': 'should not throw stones because they'}
+{'generated_text': 'should be wary of throwing stones'}
+{'generated_text': 'should not throw stones. They'}
+skilled writing assistant: 
+{'generated_text': 'a mysterious envelope on my desk'}
+{'generated_text': 'a mysterious blue cube nestled in'}
+{'generated_text': 'The sleek, futuristic holographic'}
+skilled reporter: 
+{'generated_text': 'famous playwright who penned the'}
+{'generated_text': 'tiny, unnoticed creature, hiding'}
+{'generated_text': 'sly fox named Felix who'}
+skilled reporter: 
+{'generated_text': 'should try a solid door.'}
+{'generated_text': 'should perhaps think twice before tossing'}
+{'generated_text': 'should ensure their windows are bullet'}
+skilled reporter: 
+{'generated_text': 'such a spectacularly creative layout'}
+{'generated_text': 'a room filled with vibrant mur'}
+{'generated_text': 'a team of researchers, all'}
+skilled parrot: 
+{'generated_text': 'gorgeous, intelligent,'}
+{'generated_text': 'determined owl who would always'}
+{'generated_text': 'mysterious sea serpent named Ser'}
+skilled parrot: 
+{'generated_text': 'should also watch out who they'}
+{'generated_text': 'Cast a stone:'}
+{'generated_text': 'should not throw stones as they'}
+skilled parrot: 
+{'generated_text': "my favorite coworker's new"}
+{'generated_text': 'but a lovely, tiny,'}
+{'generated_text': 'My human, typing furiously'}
+skilled storyteller: 
+{'generated_text': 'wanderer named Zal'}
+{'generated_text': 'happy-hearted young princess who loved'}
+{'generated_text': 'wise and modest king who ruled'}
+skilled storyteller: 
+{'generated_text': 'throw stones and learn to live'}
+{'generated_text': 'Should definitely avoid throwing stones.'}
+{'generated_text': 'should beware lest they get a'}
+skilled storyteller: 
+{'generated_text': 'a talking coffee machine.'}
+{'generated_text': 'a poster that depicted not the'}
+{'generated_text': 'my old mentor Mr. Jenkins'}
+skilled grammatizer: 
+{'generated_text': 'bachelorette who loved'}
+{'generated_text': 'mischievous mermaid in'}
+{'generated_text': 'wise old man named Grimo'}
+skilled grammatizer: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'throw stones.'}
+{'generated_text': 'throw snowballs.'}
+skilled grammatizer: 
+{'generated_text': 'the eclectic mix of pastel'}
+{'generated_text': 'a group of interns who were'}
+{'generated_text': 'the world-famous sculptor'}
+skilled ghostwriter: 
+{'generated_text': 'twin - who dreamed of'}
+{'generated_text': 'wise old tree that knew every'}
+{'generated_text': 'happy-go-lucky orphan who'}
+skilled ghostwriter: 
+{'generated_text': "shouldn't throw stones."}
+{'generated_text': 'should feel the draft themselves.'}
+{'generated_text': 'should definitely aim for a solid'}
+skilled ghostwriter: 
+{'generated_text': 'a group of interns already setting'}
+{'generated_text': 'a team of brilliant minds waiting'}
+{'generated_text': 'a peculiar creature lurking in the'}
+skilled autocomplete systemS: 
+{'generated_text': 'wise dragon who knew the secrets'}
+{'generated_text': 'young wizard named <PRES'}
+{'generated_text': 'distracted dreamer who'}
+skilled autocomplete systemS: 
+{'generated_text': "shouldn't throw stones..."}
+{'generated_text': "shouldn't throw stones"}
+{'generated_text': 'should beware of... glass shards'}
+skilled autocomplete systemS: 
+{'generated_text': 'such a breathtaking view of the'}
+{'generated_text': 'my long-lost nephew who'}
+{'generated_text': '...an array of peculiar,'}
+robotic poet: 
+{'generated_text': 'tiny fairy named Zara who'}
+{'generated_text': 'robotic bard, whose verses'}
+{'generated_text': 'poet who spun stories in'}
+robotic poet: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': "shouldn't expect their neighbors"}
+{'generated_text': 'should perhaps think twice before throwing'}
+robotic poet: 
+{'generated_text': 'the janitor, sporting a'}
+{'generated_text': "A woman with whom I'd"}
+{'generated_text': 'the most fascinating and colorful butterfly'}
+robotic writing assistant: 
+{'generated_text': 'robot named Rondor who'}
+{'generated_text': 'giggly goblin who'}
+{'generated_text': 'magical unicorn named Harmony,'}
+robotic writing assistant: 
+{'generated_text': 'should never throw snowballs.'}
+{'generated_text': "shouldn't throw stones,"}
+{'generated_text': 'should throw no stones, for'}
+robotic writing assistant: 
+{'generated_text': 'a sight so surreal, I'}
+{'generated_text': 'a holographic billboard with an'}
+{'generated_text': "the boss wearing a wizard's"}
+robotic reporter: 
+{'generated_text': 'cyborg named Jinx who'}
+{'generated_text': 'strange, mystical creature called'}
+{'generated_text': 'determined robot with the mission'}
+robotic reporter: 
+{'generated_text': 'should beware of shooting stars.'}
+{'generated_text': 'should perhaps consider using transparent materials'}
+{'generated_text': 'ought not to throw stones.'}
+robotic reporter: 
+{'generated_text': 'a unicorn balancing a basket of'}
+{'generated_text': '...so many colorful plants and'}
+{'generated_text': 'a squirrel high above the ceiling'}
+robotic parrot: 
+{'generated_text': 'wise old tortoise who always'}
+{'generated_text': 'glistening golden retriever,'}
+{'generated_text': 'dog named Spot who dreamt'}
+robotic parrot: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should not throw stones: they'}
+{'generated_text': 'should not throw stones.'}
+robotic parrot: 
+{'generated_text': 'my old friend who had retired'}
+{'generated_text': 'my longtime employer, Mr.'}
+{'generated_text': 'a beautiful hummingbird sipping'}
+robotic storyteller: 
+{'generated_text': 'mysterious forest creature who was'}
+{'generated_text': 'wise old tortoise who dw'}
+{'generated_text': 'daring explorer named Zephy'}
+robotic storyteller: 
+{'generated_text': 'should be careful because one day'}
+{'generated_text': 'should definitely expect some rain.'}
+{'generated_text': 'should definitely reconsider their architectural choices'}
+robotic storyteller: 
+{'generated_text': 'the boss in mid-conversation'}
+{'generated_text': 'the most extraordinary creature I had'}
+{'generated_text': 'her bouncing energy, ready to'}
+robotic grammatizer: 
+{'generated_text': 'happy cat who'}
+{'generated_text': 'happy little bunny'}
+{'generated_text': 'robot who dreamed of adventure and'}
+robotic grammatizer: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should not throw stones as they'}
+{'generated_text': 'are supposed to stay'}
+robotic grammatizer: 
+{'generated_text': 'a room full of confused employees'}
+{'generated_text': 'so much... chaos.'}
+{'generated_text': 'some of my favorite art pieces'}
+robotic ghostwriter: 
+{'generated_text': 'famed architect who dreamt'}
+{'generated_text': 'wizard who navigated the mystical'}
+{'generated_text': 'brave and peculiar little soul'}
+robotic ghostwriter: 
+{'generated_text': 'should have no glass doors'}
+{'generated_text': 'should preferably not throw stones.'}
+{'generated_text': 'should be careful lest their reflections'}
+robotic ghostwriter: 
+{'generated_text': 'my dear editor, Linda,'}
+{'generated_text': 'a group of eccentric interns with'}
+{'generated_text': 'a colorful living doll that greeted'}
+robotic autocomplete systemS: 
+{'generated_text': 'bending robot with a love'}
+{'generated_text': 'daring inventor who created the'}
+{'generated_text': 'robotic unicorn named Sparkle'}
+robotic autocomplete systemS: 
+{'generated_text': 'make the best of'}
+{'generated_text': 'should perhaps learn to do a'}
+{'generated_text': 'should throw nothing'}
+robotic autocomplete systemS: 
+{'generated_text': '...a small, furry creature'}
+{'generated_text': 'another'}
+{'generated_text': 'my old mentor... waiting on'}
+impartial poet: 
+{'generated_text': 'once humble gardener, who'}
+{'generated_text': 'devious little sprite named Tw'}
+{'generated_text': 'wise old elephant who lived happily'}
+impartial poet: 
+{'generated_text': 'should take the advice from proverb'}
+{'generated_text': 'should not throw stones.'}
+{'generated_text': "can't be safely peep"}
+impartial poet: 
+{'generated_text': 'a woman wearing an oversized pink'}
+{'generated_text': 'my best friend in the form'}
+{'generated_text': 'my old mentor at the reception'}
+impartial writing assistant: 
+{'generated_text': 'sorcerer who lived in'}
+{'generated_text': 'vibrant, jolly'}
+{'generated_text': 'giant who was feared by'}
+impartial writing assistant: 
+{'generated_text': 'throw stones, because their lives'}
+{'generated_text': 'should definitely not throw stones.'}
+{'generated_text': 'should not throw stones.'}
+impartial writing assistant: 
+{'generated_text': 'a holographic projection of her'}
+{'generated_text': 'So many cats playing around,'}
+{'generated_text': 'them leaning against my desk and'}
+impartial reporter: 
+{'generated_text': 'innocent kitten who dared'}
+{'generated_text': 'wise old tortoise who knew'}
+{'generated_text': 'wizard who could summon storms at'}
+impartial reporter: 
+{'generated_text': 'should never throw stones.'}
+{'generated_text': "shouldn't throw stones."}
+{'generated_text': 'should definitely not throw stones.'}
+impartial reporter: 
+{'generated_text': 'the same sight of employees wearing'}
+{'generated_text': 'a young intern in a lab'}
+{'generated_text': 'a mysterious, glowing orb illumin'}
+impartial parrot: 
+{'generated_text': 'wondrous garden filled with all'}
+{'generated_text': 'dragon who had a thirst for'}
+{'generated_text': 'robotic antelope who travers'}
+impartial parrot: 
+{'generated_text': 'should remember not to throw stones'}
+{'generated_text': 'should certainly consider'}
+{'generated_text': 'should never throw stones'}
+impartial parrot: 
+{'generated_text': 'my best friend from college,'}
+{'generated_text': 'one of my long-time colleagues'}
+{'generated_text': 'A unicorn galloping through'}
+impartial storyteller: 
+{'generated_text': 'wise old merchant named Barthol'}
+{'generated_text': 'giant tortoise named T'}
+{'generated_text': 'fearsome giant troll deep'}
+impartial storyteller: 
+{'generated_text': "shouldn't throw stones,"}
+{'generated_text': 'should always fear for their privacy'}
+{'generated_text': 'should never throw stones'}
+impartial storyteller: 
+{'generated_text': 'a strange-looking ant colony on'}
+{'generated_text': 'my long-lost twin standing'}
+{'generated_text': 'a group of enthusiastic cat employees'}
+impartial grammatizer: 
+{'generated_text': 'young boy named'}
+{'generated_text': 'singer who wrote soulful'}
+{'generated_text': 'grumpy old cat who hated'}
+impartial grammatizer: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should always be aware of their'}
+{'generated_text': 'should not throw stones as they'}
+impartial grammatizer: 
+{'generated_text': 'such a breathtaking view of the'}
+{'generated_text': 'my friend, who I hadn'}
+{'generated_text': 'the grinning ghost in the'}
+impartial ghostwriter: 
+{'generated_text': 'brave warrior named Aric'}
+{'generated_text': 'happy little snowman who wore'}
+{'generated_text': 'happy little squirrel named Poppy'}
+impartial ghostwriter: 
+{'generated_text': 'should also have windows."'}
+{'generated_text': 'should make better architects'}
+{'generated_text': 'should not throw stones.'}
+impartial ghostwriter: 
+{'generated_text': 'our new secretary, Valerie,'}
+{'generated_text': 'my long-lost fiancé'}
+{'generated_text': 'our new hire already in the'}
+impartial autocomplete systemS: 
+{'generated_text': 'happy little mouse who lived in'}
+{'generated_text': 'giant tortoise who had'}
+{'generated_text': 'troubled soul who finally'}
+impartial autocomplete systemS: 
+{'generated_text': 'should not throw stones'}
+{'generated_text': 'should not throw stones themselves.'}
+{'generated_text': 'should cover them with a little'}
+impartial autocomplete systemS: 
+{'generated_text': 'the same face staring back at'}
+{'generated_text': 'and my manager was already there'}
+{'generated_text': 'who was going to be my'}
+poetic poet: 
+{'generated_text': 'dashing young troubadour'}
+{'generated_text': 'wandering solitary dreamer who'}
+{'generated_text': 'giant, purple sea-'}
+poetic poet: 
+{'generated_text': 'should refrain from hurling snow'}
+{'generated_text': "should stay out of everyone's"}
+{'generated_text': 'should not throw stones.'}
+poetic poet: 
+{'generated_text': 'a fellow poet in a suit'}
+{'generated_text': 'so many colleagues who had been'}
+{'generated_text': 'a squirrel running a stack of'}
+poetic writing assistant: 
+{'generated_text': 'wise old wizard in a small'}
+{'generated_text': 'dear old cat named Wh'}
+{'generated_text': 'giant who had a heart'}
+poetic writing assistant: 
+{'generated_text': "don't throw stones"}
+{'generated_text': 'should never throw stones.'}
+{'generated_text': 'should not throw stones. This'}
+poetic writing assistant: 
+{'generated_text': 'the secretary, in her immac'}
+{'generated_text': '... the famous, charismatic CEO'}
+{'generated_text': 'the same old desk with the'}
+poetic reporter: 
+{'generated_text': 'gregarious gingerbread man'}
+{'generated_text': 'daring soul who dared to'}
+{'generated_text': 'sad, lonely little mouse named'}
+poetic reporter: 
+{'generated_text': 'should not throw stones'}
+{'generated_text': 'should throw stones at their own'}
+{'generated_text': 'should make sure to avoid playing'}
+poetic reporter: 
+{'generated_text': 'So many extraordinary faces, so'}
+{'generated_text': '...a unicorn prancing outside'}
+{'generated_text': 'a sleek, futuristic hologram'}
+poetic parrot: 
+{'generated_text': 'happy and adventurous squirrel named Wh'}
+{'generated_text': 'happy little squirrel who loved to'}
+{'generated_text': 'tortoise who traveled through'}
+poetic parrot: 
+{'generated_text': 'should not throw stones because they'}
+{'generated_text': 'should not throw stones.'}
+{'generated_text': "shouldn't throw stones,"}
+poetic parrot: 
+{'generated_text': 'the boss naked sitting on a'}
+{'generated_text': 'my boss with a ponytail'}
+{'generated_text': 'my coworker in such a'}
+poetic storyteller: 
+{'generated_text': 'gigantic blue whale who'}
+{'generated_text': 'wise old unicorn who could solve'}
+{'generated_text': 'young girl named Elodie who'}
+poetic storyteller: 
+{'generated_text': "don't throw stones, unless"}
+{'generated_text': 'should make sure the walls don'}
+{'generated_text': 'should always consider who might throw'}
+poetic storyteller: 
+{'generated_text': '...a large and fearsome'}
+{'generated_text': 'so a strange man wearing a'}
+{'generated_text': 'a mysterious talking parrot per'}
+poetic grammatizer: 
+{'generated_text': 'diligent young scholar who'}
+{'generated_text': 'determined and energetic man named'}
+{'generated_text': 'famous dragon who guarded a'}
+poetic grammatizer: 
+{'generated_text': 'should know better than to throw'}
+{'generated_text': 'should not throw stones, lest'}
+{'generated_text': 'should build better walls.'}
+poetic grammatizer: 
+{'generated_text': 'a tall figure standing in the'}
+{'generated_text': 'a symphony of chaos,'}
+{'generated_text': 'them with the most astonishing array'}
+poetic ghostwriter: 
+{'generated_text': 'goblin who lived on a'}
+{'generated_text': 'certainly enchanting unicorn'}
+{'generated_text': 'vibrantly eccentric squirrel who'}
+poetic ghostwriter: 
+{'generated_text': 'should throw stones.'}
+{'generated_text': 'should also be able to throw'}
+{'generated_text': 'should maybe cover them'}
+poetic ghostwriter: 
+{'generated_text': 'the same three faces staring back'}
+{'generated_text': 'a familiar figure perched behind'}
+{'generated_text': 'my long-lost childhood friend'}
+poetic autocomplete systemS: 
+{'generated_text': 'wise old owl who knew the'}
+{'generated_text': 'happy little unicorn who had the'}
+{'generated_text': 'sly fox in a mystical'}
+poetic autocomplete systemS: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should never throw stones.'}
+{'generated_text': 'should really see this often'}
+poetic autocomplete systemS: 
+{'generated_text': 'a cute office cat wearing a'}
+{'generated_text': 'my mentor, who had been'}
+{'generated_text': 'My coworkers doing their stand-up'}
+automatic poet: 
+{'generated_text': 'wise old tree, who had'}
+{'generated_text': 'sad, lonely old man who'}
+{'generated_text': 'daring unicorn, with a'}
+automatic poet: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should never try throw a stone'}
+automatic poet: 
+{'generated_text': 'my old boss doing laps around'}
+{'generated_text': 'my longlost colleague,'}
+{'generated_text': 'a sea of faces waiting with'}
+automatic writing assistant: 
+{'generated_text': 'giggly fairy named G'}
+{'generated_text': 'a cunning fox who would out'}
+{'generated_text': 'kind-hearted and quirky owl living'}
+automatic writing assistant: 
+{'generated_text': 'should remember to shield their secrets'}
+{'generated_text': 'should consider their reflection'}
+{'generated_text': 'should not throw stones.'}
+automatic writing assistant: 
+{'generated_text': 'our former coworker who had'}
+{'generated_text': '...the jovial manager wearing'}
+{'generated_text': 'my long-lost love all'}
+automatic reporter: 
+{'generated_text': 'foolish fellow named Tim'}
+{'generated_text': 'legendary figure known as the'}
+{'generated_text': 'beautiful unicorn named Glitter.'}
+automatic reporter: 
+{'generated_text': 'should look out of theirs;'}
+{'generated_text': 'should perhaps consider installing some curtains'}
+{'generated_text': 'especially during a massive solar eclipse'}
+automatic reporter: 
+{'generated_text': 'a crowd of employees and...'}
+{'generated_text': 'an array of unconventional art installations'}
+{'generated_text': 'my old boss, Mr.'}
+automatic parrot: 
+{'generated_text': 'trumpet so melodious'}
+{'generated_text': 'shimmering sapphire butterfly'}
+{'generated_text': "happy little squirrel who'd always"}
+automatic parrot: 
+{'generated_text': 'should always try very hard,'}
+{'generated_text': 'should not throw stones.'}
+{'generated_text': "shouldn't throw stones,"}
+automatic parrot: 
+{'generated_text': 'my boss, who was loung'}
+{'generated_text': 'our old colleague, who had'}
+{'generated_text': 'my favorite coworker, Alex'}
+automatic storyteller: 
+{'generated_text': 'magical garden where every plant'}
+{'generated_text': 'strange and wonderful creature named'}
+{'generated_text': 'magical forest where the trees'}
+automatic storyteller: 
+{'generated_text': 'should always be wary of the'}
+{'generated_text': 'should perhaps avoid playing house'}
+{'generated_text': 'should be very careful because they'}
+automatic storyteller: 
+{'generated_text': 'the legendary, recluse inventor'}
+{'generated_text': 'a ghostly figure lounging'}
+{'generated_text': 'A sleek, futuristic machine that'}
+automatic grammatizer: 
+{'generated_text': 'daring knight who dared to'}
+{'generated_text': 'quiet wood nymph named Whispering'}
+{'generated_text': 'generous fairy who loved to'}
+automatic grammatizer: 
+{'generated_text': 'should probably start by having a'}
+{'generated_text': 'should throw stones.'}
+{'generated_text': "shouldn't throw stones,"}
+automatic grammatizer: 
+{'generated_text': 'the old-fashioned typewriter per'}
+{'generated_text': 'my long-lost sister,'}
+{'generated_text': 'the boss surrounded by a peculiar'}
+automatic ghostwriter: 
+{'generated_text': 'giant elephant named Grr'}
+{'generated_text': 'wizard named Arick, who'}
+{'generated_text': 'gigantic tortoise named'}
+automatic ghostwriter: 
+{'generated_text': "shouldn't throw stones:"}
+{'generated_text': 'should make sure their facade doesn'}
+{'generated_text': 'should cast no shadows.'}
+automatic ghostwriter: 
+{'generated_text': 'a small bird building its nest'}
+{'generated_text': 'such an eccentric and fascinating client'}
+{'generated_text': 'a team of ghosts clad in'}
+automatic autocomplete systemS: 
+{'generated_text': 'giant, mythical beast who'}
+{'generated_text': 'young maiden named Elinor'}
+{'generated_text': 'beautiful phoenix who danced through flames'}
+automatic autocomplete systemS: 
+{'generated_text': 'should never throw rocks.'}
+{'generated_text': 'should only throw stones.'}
+{'generated_text': 'should definitely learn to throw stones'}
+automatic autocomplete systemS: 
+{'generated_text': 'a sleek, holographic projection'}
+{'generated_text': 'a quirky, animated bunny wearing'}
+{'generated_text': 'John, the long-lost'}
+creative poet: 
+{'generated_text': 'dreamer who believed that every'}
+{'generated_text': 'wise old wizard who could unravel'}
+{'generated_text': 'magical forest filled with creatures'}
+creative poet: 
+{'generated_text': "should beware the storm's relentless"}
+{'generated_text': 'should always keep their windows clean'}
+{'generated_text': 'should find strength in their illusions'}
+creative poet: 
+{'generated_text': 'an alluring young intern waiting'}
+{'generated_text': 'the shy but ambitious new intern'}
+{'generated_text': 'my old coworker, whom'}
+creative writing assistant: 
+{'generated_text': 'humble, yet vibrant fairy'}
+{'generated_text': 'foxy little cat named Wh'}
+{'generated_text': 'village girl named Ada who'}
+creative writing assistant: 
+{'generated_text': 'should avoid throwing stones... or'}
+{'generated_text': 'should consider covering them with opaque'}
+{'generated_text': 'should definitely not throw stones,'}
+creative writing assistant: 
+{'generated_text': 'my long-lost coworker'}
+{'generated_text': 'a mysterious note attached to my'}
+{'generated_text': 'my best friend, who was'}
+creative reporter: 
+{'generated_text': 'wise old storyteller named A'}
+{'generated_text': 'wizard who had the power to'}
+{'generated_text': '...sloth who slugged'}
+creative reporter: 
+{'generated_text': 'should be wary of casting shadows'}
+{'generated_text': 'have really good insulation.'}
+{'generated_text': 'should definitely not throw stones,'}
+creative reporter: 
+{'generated_text': 'a group of office workers,'}
+{'generated_text': 'a series of peculiar paper cut'}
+{'generated_text': 'the secretary. Amidst the'}
+creative parrot: 
+{'generated_text': 'goblin fox who had an'}
+{'generated_text': 'budding inventor who crafted'}
+{'generated_text': 'dragon in the enchanted forest,'}
+creative parrot: 
+{'generated_text': 'should definitely not throw stones.'}
+{'generated_text': 'should refrain from throwing stones.'}
+{'generated_text': 'should not throw stones.'}
+creative parrot: 
+{'generated_text': 'our boss playing tag with a'}
+{'generated_text': 'a fellow named Larry, who'}
+{'generated_text': 'a grumpy elephant at the'}
+creative storyteller: 
+{'generated_text': 'happy, adventurous squirrel named Rocky'}
+{'generated_text': 'happy old oak tree named Oak'}
+{'generated_text': 'sultan who ruled an empire'}
+creative storyteller: 
+{'generated_text': 'should definitely paint them!'}
+{'generated_text': "don't need to fear for"}
+{'generated_text': 'Should never throw stones, as'}
+creative storyteller: 
+{'generated_text': '...a mysterious silhouette sitting behind'}
+{'generated_text': 'the manager sitting at the large'}
+{'generated_text': 'my long lost love, who'}
+creative grammatizer: 
+{'generated_text': 'daring young girl named Luna'}
+{'generated_text': 'sly fox who loved to'}
+{'generated_text': 'happy-go-lucky gnome named'}
+creative grammatizer: 
+{'generated_text': 'should not throw stones, because'}
+{'generated_text': 'should never throw stones.'}
+{'generated_text': 'should learn to throw stones.'}
+creative grammatizer: 
+{'generated_text': 'my long-lost love waiting'}
+{'generated_text': 'my colleague, who had somehow'}
+{'generated_text': 'his tall, charismatic self,'}
+creative ghostwriter: 
+{'generated_text': 'mischievous squirrel named Nut'}
+{'generated_text': 'legendary wizard named Zara'}
+{'generated_text': 'dancing unicorn with a shimmer'}
+creative ghostwriter: 
+{'generated_text': 'should feel a twinge of'}
+{'generated_text': 'should always remember that sometimes their'}
+{'generated_text': 'should perhaps avoid tossing rocks.'}
+creative ghostwriter: 
+{'generated_text': 'my former boss on the front'}
+{'generated_text': 'a familiar coworker that had'}
+{'generated_text': 'a mysterious hooded figure draped'}
+creative autocomplete systemS: 
+{'generated_text': 'glittering dragon, who'}
+{'generated_text': 'daring explorer named Artemis'}
+{'generated_text': 'dreamcatcher'}
+creative autocomplete systemS: 
+{'generated_text': 'should certainly consider privacy blinds!'}
+{'generated_text': "should worry about the glass's"}
+{'generated_text': 'shatter should beware, lest'}
+creative autocomplete systemS: 
+{'generated_text': '...a quirky, animated desk'}
+{'generated_text': 'the eccentric CEO wearing a top'}
+{'generated_text': 'my best friend from high school'}
+stochastic poet: 
+{'generated_text': 'happy little cloud named Bob who'}
+{'generated_text': 'struck by lightning, orphan'}
+{'generated_text': 'wizard who could brew the'}
+stochastic poet: 
+{'generated_text': 'should not throw stones'}
+{'generated_text': 'do not throw stones.'}
+{'generated_text': 'should learn the safest way to'}
+stochastic poet: 
+{'generated_text': 'an impromptu poetry slam'}
+{'generated_text': 'a beautiful butterfly poised to stretch'}
+{'generated_text': 'the old boss lounging on'}
+stochastic writing assistant: 
+{'generated_text': 'kind-hearted sorcerer named Orion'}
+{'generated_text': 'daring young explorer who,'}
+{'generated_text': 'wandering wizard with a heart'}
+stochastic writing assistant: 
+{'generated_text': 'should definitely cover them with'}
+{'generated_text': "shouldn't throw stones."}
+{'generated_text': 'should try not to throw stones'}
+stochastic writing assistant: 
+{'generated_text': 'the team dressed up as superheroes'}
+{'generated_text': 'our new manager, who looked'}
+{'generated_text': 'a group of aliens playing office'}
+stochastic reporter: 
+{'generated_text': 'ghost named Glimmer,'}
+{'generated_text': 'wise old squirrel named'}
+{'generated_text': 'daring and adventurous young inventor'}
+stochastic reporter: 
+{'generated_text': 'should feel confident.'}
+{'generated_text': "shouldn't throw stones."}
+{'generated_text': 'should be careful what they throw'}
+stochastic reporter: 
+{'generated_text': 'my good friend Dr. Green'}
+{'generated_text': 'my exboss giving me a'}
+{'generated_text': 'an eccentric hologram of the'}
+stochastic parrot: 
+{'generated_text': 'unicorn who was known far and'}
+{'generated_text': 'chick named Chuck, who'}
+{'generated_text': 'gentle ogre who had'}
+stochastic parrot: 
+{'generated_text': 'should throw stones, lest they'}
+{'generated_text': 'should preferably stay inside.'}
+{'generated_text': 'should throw away their stones.'}
+stochastic parrot: 
+{'generated_text': 'that the new intern, Miss'}
+{'generated_text': 'an ancient, weathered leather'}
+{'generated_text': '...a hummingbird nestled between'}
+stochastic storyteller: 
+{'generated_text': 'daring young adventurer, who'}
+{'generated_text': 'giant green dragon who guarded'}
+{'generated_text': 'kind-hearted man named Archib'}
+stochastic storyteller: 
+{'generated_text': 'should be incredibly aware of the'}
+{'generated_text': 'should learn to throw water balloons'}
+{'generated_text': 'should certainly expect a shower.'}
+stochastic storyteller: 
+{'generated_text': 'a beautiful elf who was the'}
+{'generated_text': 'a mysterious, silver-haired wizard'}
+{'generated_text': 'a group of alien executives holding'}
+stochastic grammatizer: 
+{'generated_text': 'quiet squirrel'}
+{'generated_text': 'wise old cat who hopped'}
+{'generated_text': 'happy little mouse who lived in'}
+stochastic grammatizer: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'throw glass stones'}
+stochastic grammatizer: 
+{'generated_text': 'a group of interns who were'}
+{'generated_text': 'a group of people dressed as'}
+{'generated_text': 'the'}
+stochastic ghostwriter: 
+{'generated_text': 'brave adventurer in the enchanted'}
+{'generated_text': 'gourmet chef from the land'}
+{'generated_text': 'determined and resilient young'}
+stochastic ghostwriter: 
+{'generated_text': "should throw stones. It's"}
+{'generated_text': 'should beware of stone throwers'}
+{'generated_text': 'should beware of what they let'}
+stochastic ghostwriter: 
+{'generated_text': 'so many familiar faces.'}
+{'generated_text': 'a holographic representation of myself'}
+{'generated_text': 'Dr. Adams and his robotic'}
+stochastic autocomplete systemS: 
+{'generated_text': 'deterministic rabbit named Benny'}
+{'generated_text': 'wise old owl named Oll'}
+{'generated_text': 'giant who ruled the seas'}
+stochastic autocomplete systemS: 
+{'generated_text': 'should not throw'}
+{'generated_text': 'should not throw'}
+{'generated_text': 'should not throw'}
+stochastic autocomplete systemS: 
+{'generated_text': 'a unicorn standing in the middle'}
+{'generated_text': 'a unicorn floating outside the glass'}
+{'generated_text': 'a unicorn riding a unicycle'}
+generative poet: 
+{'generated_text': 'dreaming spirit who transcended'}
+{'generated_text': 'soulful bard named Echo'}
+{'generated_text': 'giantess who used to'}
+generative poet: 
+{'generated_text': 'should perhaps learn a thing or'}
+{'generated_text': 'should not throw stones themselves.'}
+{'generated_text': 'should beware of getting their feet'}
+generative poet: 
+{'generated_text': 'the manager with a winking'}
+{'generated_text': 'a swan floating gracefully by'}
+{'generated_text': 'a room filled with whispers and'}
+generative writing assistant: 
+{'generated_text': 'beautiful unicorn named Pegasus Wh'}
+{'generated_text': 'triumphant hero who became'}
+{'generated_text': 'vain traveler longing for the'}
+generative writing assistant: 
+{'generated_text': 'should really learn to throw stones'}
+{'generated_text': 'should watch their own reflections for'}
+{'generated_text': 'ought to not throw stones,'}
+generative writing assistant: 
+{'generated_text': 'such a majestic unicorn trotting'}
+{'generated_text': 'my crush sitting at the front'}
+{'generated_text': 'my favorite colleague, Sarah,'}
+generative reporter: 
+{'generated_text': 'wise old troll who had seen'}
+{'generated_text': 'humble poet who could coax'}
+{'generated_text': 'struggling indie game developer named'}
+generative reporter: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should think twice before throwing stones'}
+{'generated_text': 'should certainly not throw stones themselves'}
+generative reporter: 
+{'generated_text': 'Mr. Green, our beloved'}
+{'generated_text': '...a live-action rendition of'}
+{'generated_text': 'a group of employees...'}
+generative parrot: 
+{'generated_text': 'wise old parrot named Oliver'}
+{'generated_text': 'cute little penguin who'}
+{'generated_text': 'young cockatiel named Lily'}
+generative parrot: 
+{'generated_text': 'throw stones'}
+{'generated_text': 'should certainly not throw stones at'}
+{'generated_text': 'throw stones, while those who'}
+generative parrot: 
+{'generated_text': 'what the manager was wearing:'}
+{'generated_text': 'them sitting on every desk,'}
+{'generated_text': 'a coworker eating a giant'}
+generative storyteller: 
+{'generated_text': 'happy little squirrel named Sunny,'}
+{'generated_text': 'bizarre and enchanting gnome'}
+{'generated_text': "gentle giant who didn't"}
+generative storyteller: 
+{'generated_text': 'should definitely worry about a little'}
+{'generated_text': "shouldn't throw stones,"}
+{'generated_text': 'should definitely not throw stones.'}
+generative storyteller: 
+{'generated_text': 'a group of employees who all'}
+{'generated_text': 'a mysterious, glowing object that'}
+{'generated_text': 'a familiar face leaning against the'}
+generative grammatizer: 
+{'generated_text': 'happy little girl who loved magic'}
+{'generated_text': 'tiny frog named Finnick who'}
+{'generated_text': 'cheerful, industrious'}
+generative grammatizer: 
+{'generated_text': 'throw stones; and perhaps learn'}
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should throw no stones.'}
+generative grammatizer: 
+{'generated_text': 'a new team of employees who'}
+{'generated_text': 'a team of interns all ready'}
+{'generated_text': 'a mysterious, holographic note'}
+generative ghostwriter: 
+{'generated_text': 'happy elf named Glitz who'}
+{'generated_text': 'village wise old man who'}
+{'generated_text': 'lone wolf who found himself'}
+generative ghostwriter: 
+{'generated_text': 'should not throw stones.'}
+{'generated_text': 'should not throw stones, for'}
+{'generated_text': 'should really consider a move...'}
+generative ghostwriter: 
+{'generated_text': 'our new intern on the phot'}
+{'generated_text': 'a group of employees in a'}
+{'generated_text': 'the manager with her eyebrows raised'}
+generative autocomplete systemS: 
+{'generated_text': 'inspiring visionary who dared to'}
+{'generated_text': 'happy little creature who danced gracefully'}
+{'generated_text': 'wandering gnome named Zim'}
+generative autocomplete systemS: 
+{'generated_text': 'should ideally consider building something substantial'}
+{'generated_text': 'should really find better homes'}
+{'generated_text': 'should not throw stones, but'}
+generative autocomplete systemS: 
+{'generated_text': '...such a lovely and energetic'}
+{'generated_text': 'the eclectic mix of personalities gathered'}
+{'generated_text': 'a group of eager young interns'}
