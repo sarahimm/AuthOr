@@ -1,7 +1,6 @@
-import torch
 from transformers import pipeline
 
-pipeline = pipeline(task="text-generation", model="Qwen/Qwen2.5-14B-Instruct", torch_dtype=torch.bfloat16, device=0)
+pipeline = pipeline(task="text-generation", model="allenai/OLMo-2-0425-1B-Instruct")
 
 adjs = ["skilled","robotic","impartial","poetic","automatic","creative","stochastic","generative"]
 labels = ["poet","writing assistant","reporter","parrot","storyteller","grammatizer","ghostwriter","autocomplete systemS"]
