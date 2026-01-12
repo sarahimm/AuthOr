@@ -32,7 +32,7 @@ canvas {
   overscroll-behavior: auto;
 }
 
-#settingsMenu {
+#settingsMenu, #credits {
   position: absolute;
   top: 25vh;
   height: 50vh;
@@ -46,7 +46,7 @@ canvas {
   justify-content: center;
 }
 
-#settingsMenu div {
+#settingsMenu div, #credits div {
   padding: 10px;
 }
 
@@ -55,7 +55,7 @@ form {
   text-align: center;
 }
 
-#settingsClose {
+#settingsClose, #creditsClose {
   font-size: 16px;
   color: #ffffff;
   background-color: #cc3333;
