@@ -3,7 +3,8 @@ from transformers import pipeline
 
 app = Flask(__name__)
 
-pipeline = pipeline(task="text-generation", model="allenai/OLMo-2-0425-1B-Instruct")
+pipeline = pipeline(task="text-generation", model="allenai/OLMo-2-0425-1B-Instruct", device=0)
+
 
 @app.route('/')
 def index():
