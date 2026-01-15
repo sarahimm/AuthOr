@@ -12,23 +12,10 @@
     <main id="main">
     </main>
     <div id="welcomeMsg">
-      <p>
-        Welcome, writer.
-      </p><p>
-        Allow me to introduce you to B.L.E.H.: Borderline Literate Electronic Helper, your new writing assistant. B.L.E.H. is here to help you do your work faster, or better, or...something. Actually, I don't know why it's been sent to you, only that Management is insistent you try it out. Maybe you can figure out what it's good for?
-      </p><p>
-        B.L.E.H. has been trained by all the best writers. Well, trained might be a strong word. Let's just say it's <i>acquired skills</i>, overheard something inspiring, perhaps, from all the best people in print (the ones we could afford, anyway, or the ones who couldn't complain that we couldn't).
-      </p>
-      <p>
-        Basically, it'll take in anything you write while its red 'RECORDING' light is on. If you want anything you write to pass under its radar, you can toggle its recording off and on with the CTRL button--but if anyone asks, you didn't hear it from me.
-      </p><p>Any time you hit TAB, B.L.E.H. will give you some suggestions to continue your piece. <b>Make sure you give it lots of elbow room above, below, and to the right--it gets a little talkative sometimes.</b>
-      </p><p>
-        Navigate your page as usual, using 	&#8592; 	&#8593;  	&#8594;  	&#8595; to move the cursor, BKSPACE to put some eraser fluid over the last character, and ENTER/RETURN to go to the start of your current line. Your typewriter's still a typewriter, nothing too crazy.
-      </p><p>  
-        The idea's that you carry on with work as usual, letting B.L.E.H. write bits and pieces of...whatever you call that nonsense you churn out for us usually. But Management wants to see your work directly, this time, to make sure the system's working as intended. So if you wanted I suppose you could try to draw it out or argue with it or something if it's not being helpful; those pages will make your point more clearly than anything you've ever penned for us. No offense.
-      </p><p> 
-        It's up to you. Give it a crack, and have fun(???). You can always open this page back up if you need, just click on "WELCOME" in the upper right corner.
-      </p>
+      <h2>Tutorial</h2>
+      <video width="100%;" controls>
+        <source src="img/AutographTutorial-captioned.mp4" type="video/mp4">
+      </video>
       <button id="welcomeClose">Proceed</button>
     </div>
     <div id="instructions">
@@ -42,6 +29,7 @@
         <h2>Resources used to create AutoGraph:</h2>
         <ul>
           <li><b>Sound effects:</b> Sourced from <a href="https://sound-effects.bbcrewind.co.uk/" target="blank">sound-effects.bbcrewind.co.uk</a> (© BBC)</li>
+          <li><b>Tutorial music:</b> By Albert Behar on Uppbeat, License code: VUUGNBTRZIPRLPHW</li>
           <li><b>Imagery</b>
             <ul>
               <li>B.L.E.H.: generated with Stability Matrix and manually edited</li>
@@ -61,82 +49,84 @@
       <button id="creditsClose">X</button>
     </div>
     <div id="settingsMenu">
-      <form action="#" method="POST">
-        <div>
-            <label for="role1"><b>B.L.E.H.'s instructions:</b> You are a </label>
+      <div style="max-width: 600px;">
+        <form action="#" method="POST">
+          <div>
+              <label for="role1"><b>B.L.E.H.'s instructions:</b> You are a </label>
 
-            <select name="role1" id="role1">
-              <option value="creative">creative</option>
-              <option value="robotic">robotic</option>
-              <option value="impartial">impartial</option>
-              <option value="poetic">poetic</option>
-              <option value="automatic">automatic</option>
-              <option value="stochastic">stochastic</option>
-              <option value="generative">generative</option>
-              <option value="skilled">skilled</option>
-            </select> 
+              <select name="role1" id="role1">
+                <option value="creative">creative</option>
+                <option value="robotic">robotic</option>
+                <option value="impartial">impartial</option>
+                <option value="poetic">poetic</option>
+                <option value="automatic">automatic</option>
+                <option value="stochastic">stochastic</option>
+                <option value="generative">generative</option>
+                <option value="skilled">skilled</option>
+              </select> 
 
-            <select name="role2" id="role2">
-              <option value="writing assistant">writing assistant</option>
-              <option value="poet">poet</option>
-              <option value="reporter">reporter</option>
-              <option value="parrot">parrot</option>
-              <option value="storyteller">storyteller</option>
-              <option value="grammatizer">grammatizer</option>
-              <option value="ghostwriter">ghostwriter</option>
-              <option value="autocomplete system">autocomplete system</option>
-            </select>
-            <label for="adjective">. Continue the sentence or line you are given by providing the most  </label>
+              <select name="role2" id="role2">
+                <option value="writing assistant">writing assistant</option>
+                <option value="poet">poet</option>
+                <option value="reporter">reporter</option>
+                <option value="parrot">parrot</option>
+                <option value="storyteller">storyteller</option>
+                <option value="grammatizer">grammatizer</option>
+                <option value="ghostwriter">ghostwriter</option>
+                <option value="autocomplete system">autocomplete system</option>
+              </select>
+              <label for="adjective">. Continue the sentence or line you are given by providing the most  </label>
 
-            <select name="adjective" id="adjective">
-              <option value="likely">likely</option>
-              <option value="creative" selected="selected">creative</option>
-              <option value="beautiful">beautiful</option>
-              <option value="improbable">improbable</option>
-              <option value="dramatic">dramatic</option>
-            </select> 
+              <select name="adjective" id="adjective">
+                <option value="likely">likely</option>
+                <option value="creative" selected="selected">creative</option>
+                <option value="beautiful">beautiful</option>
+                <option value="improbable">improbable</option>
+                <option value="dramatic">dramatic</option>
+              </select> 
 
-            next word or phrase. 
-        </div>
-        <div>
-            <label for="temperature"><b>How unpredictable would you like B.L.E.H. to be?</b>:</label>
-            <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.8" required>
-            <span id="temperatureValue">0.8</span>
-        </div>
+              next word or phrase. 
+          </div>
+          <div>
+              <label for="temperature"><b>How unpredictable would you like B.L.E.H. to be?</b>:</label>
+              <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.8" required>
+              <span id="temperatureValue">0.8</span>
+          </div>
 
+          <div>
+              <label for="prompt"><b>Text B.L.E.H. will continue:</b></label>
+              <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Enter text to continue" value="" required>
+              <div>
+                <label for="autofill"><b>Auto-prompt on?</b> (Lets B.L.E.H. "hear" everything you type--recommended)</label>
+                <input type="checkbox" id="autofill" name="autofill" checked="checked">
+              </div>
+          </div>
+          <div>
+            <label for="maxTokens"><b>Maximum suggestion length (1-15)</b>:</label>
+            <input type="range" id="maxTokens" name="maxTokens" min="1" max="15" value="6" required>
+            <span id="maxTokensValue">6</span>
+          </div>
+          <div>
+              <label for="numOptions"><b>Number of suggestions (1-5):</b></label>
+              <input type="range" id="numOptions" name="numOptions" min="1" max="5" value="5" required>
+              <span id="numOptionsValue">5</span>
+          </div>
+        
         <div>
-            <label for="prompt"><b>Text B.L.E.H. will continue:</b></label>
-            <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Enter text to continue" value="" required>
-            <div>
-              <label for="autofill"><b>Auto-prompt on?</b> (Lets B.L.E.H. "hear" everything you type--recommended)</label>
-              <input type="checkbox" id="autofill" name="autofill" checked="checked">
-            </div>
+          <b>Font size*:</b> 
+          <button id="fontDown">-</button>
+          <button id="fontUp">+</button>
         </div>
-        <div>
-          <label for="maxTokens"><b>Maximum suggestion length (1-15)</b>:</label>
-          <input type="range" id="maxTokens" name="maxTokens" min="1" max="15" value="6" required>
-          <span id="maxTokensValue">6</span>
-        </div>
-        <div>
-            <label for="numOptions"><b>Number of suggestions (1-5):</b></label>
-            <input type="range" id="numOptions" name="numOptions" min="1" max="5" value="5" required>
-            <span id="numOptionsValue">5</span>
-        </div>
+        <div><em>*This will not affect text already on the page. <br> Click 'New Page' after adjusting the size to start over with the new font.</em></div>
       </form>
-      <div>
-        <b>Font size*:</b> 
-        <button id="fontDown">-</button>
-        <button id="fontUp">+</button>
       </div>
-      <div><em>*This will not affect text already on the page. <br> Click 'New Page' after adjusting the size to start over with the new font.</em></div>
-    
       <button id="settingsClose">X</button>
     </div>
     <div id="btnBar">
-      <button id="recordingBtn"><div id="recordingLight"></div>AUTO-PROMPT</button>
+      <button id="recordingBtn" style="margin-right: 20px;"><div id="recordingLight"></div>AUTO-PROMPT</button>
       <button id="welcomeOpen">WELCOME</button>
       <button id="settingsOpen">SETTINGS</button>
-      <button id="creditsOpen">CREDITS</button>
+      <button id="creditsOpen" style="margin-right: 20px;">CREDITS</button>
       <button id="savePage"><b>PRINT</b></button>
       <button id="newPage"><b>NEW PAGE</b></button>
     </div>
