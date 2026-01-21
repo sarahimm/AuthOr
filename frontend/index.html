@@ -8,7 +8,7 @@
 
   </head>
   <body>
-    <div id="promptWindow">Text to continue: <span id="currentPrompt"></span></div>
+    <div id="promptWindow"><b>B.L.E.H.'s record</b> <span style="font-size: 12px;">(what you've written so far)</span> : <span id="currentPrompt"></span></div>
     <main id="main">
     </main>
     <div id="welcomeMsg">
@@ -16,12 +16,18 @@
       <video width="100%;" controls>
         <source src="img/AutographTutorial-captioned.mp4" type="video/mp4">
       </video>
-      <button id="welcomeClose">Proceed</button>
+      <h2>Helpful tips</h2>
+        <ul>
+          <li>B.L.E.H.'s suggestions appear in a different color; you can type over top of one yourself to "accept" it </li>
+          <li>(Suggestions you don't like can be ignored, crossed out, or scathingly critiqued--your choice)</li>
+          <li>Use PRINT -> 'Save as PDF' or 'Print to PDF' to save your page digitally</li>
+        </ul>
+      <button id="welcomeClose">PROCEED</button>
     </div>
     <div id="instructions">
-      <p>Press <span class="key">TAB</span> to ask BLEH for completions</p>
-      <p>BLEH will continue whatever you've written while the 'RECORDING' light was on</p>
-      <p>Press <span class="key">CTRL</span> to turn BLEH's recording on or off</p>
+      <p>Press <span class="key">TAB</span> to ask B.L.E.H. for completions</p>
+      <p>BLEH will continue whatever you've written while the 'AUTO-PROMPT' light was on</p>
+      <p>Press <span class="key">CTRL</span> to turn AUTO-PROMPT on or off</p>
     </div>
     <div id="credits" style="padding: 20px;">
         <div>
@@ -94,8 +100,8 @@
           </div>
 
           <div>
-              <label for="prompt"><b>Text B.L.E.H. will continue:</b></label>
-              <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Enter text to continue" value="" required>
+              <label for="prompt"><b>B.L.E.H.'s record:</b></label>
+              <input type="text" id="prompt" name="prompt" maxlength="300" placeholder="Text you've written so far" value="" required>
               <div>
                 <label for="autofill"><b>Auto-prompt on?</b> (Lets B.L.E.H. "hear" everything you type--recommended)</label>
                 <input type="checkbox" id="autofill" name="autofill" checked="checked">

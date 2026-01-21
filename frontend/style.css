@@ -70,6 +70,19 @@ form {
   padding: 14px 16px;
 }
 
+#welcomeClose {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #004a15;
+  margin-left: calc(50% - 75px);
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+}
+
 #btnBar {
   position: absolute;
   right: 0;
